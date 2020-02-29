@@ -35,7 +35,7 @@ collections:
     permalink: /posts/:title/
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
