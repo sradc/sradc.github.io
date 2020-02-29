@@ -1,4 +1,5 @@
 - Use MathJax in 'Piano Tuning'
 - make the references link to the bottom of the page, not the other website
 - shorten the long code lines in Naive Bayes
-
+- fix table increasing page width on mobile
+- change syntax highlighting to match jupyter
