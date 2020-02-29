@@ -3,3 +3,5 @@
 - shorten the long code lines in Naive Bayes
 - fix table increasing page width on mobile
 - change syntax highlighting to match jupyter
+- add share buttons, such as https://superdevresources.com/share-buttons-jekyll/
+- fix legacy piano tuning link...
