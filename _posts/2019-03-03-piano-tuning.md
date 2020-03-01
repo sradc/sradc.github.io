@@ -223,7 +223,7 @@ You then found a mathematical expression for this curve.
 
 <br>
 
-It turns out that the tuning system you 
+The tuning system you 
 created is called twelve-tone equal temperament [[1]](#ref1). 
 It is "the most common tuning system since the 18th century",
 but not the only tuning system available [[2]](#ref2).
@@ -296,7 +296,7 @@ Other tuning systems, such as just intonation [[5]](#ref5),
 lack this property, meaning that a given interval can sound more like the interval, 
 or less like the interval, as you move it up and down the keyboard, because the frequency ratio doesn't stay constant.
 For certain notes and intervals these tuning 
-systems may sound 'better' than equal temperament, but then for other notes and intervals the sound will be 'worse.
+systems may sound 'better' than equal temperament, but then for other notes and intervals the sound may be 'worse'.
 
 
 ## References:
@@ -310,7 +310,7 @@ systems may sound 'better' than equal temperament, but then for other notes and 
 </a>
 
 <a id="ref3" href="https://en.wikipedia.org/wiki/Piano_acoustics#The_Railsback_curve">
-[3] https://en.wikipedia.org/wiki/Piano_acoustics#The_Railsback_curve</p>
+[3] https://en.wikipedia.org/wiki/Piano_acoustics#The_Railsback_curve
 </a>
 
 <a id="ref4" href="https://en.wikipedia.org/wiki/Piano_key_frequencies">

@@ -1,7 +1,7 @@
 TODO:
 - shorten the long code lines in Naive Bayes
+- fix the unbolded x in Naive Bayes
 - add share buttons, such as https://superdevresources.com/share-buttons-jekyll/
-
 
 
 DONE:
