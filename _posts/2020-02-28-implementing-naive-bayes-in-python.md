@@ -10,33 +10,33 @@ categories: machine-learning python
 [Sidney Radcliffe](https://sidsite.com/) | If you spot any mistakes [let me know](https://sidsite.com/contact/) | [Github](https://github.com/sradc/MyNotebooks/blob/master/notebooks/Implementing%20Naive%20Bayes%20in%20Python.ipynb)
 
 
-**Implementing a [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) machine learning classifier in Python.** Starting with a basic implementation, and then improving it.
-
+**Implementing a [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) machine learning classifier in Python.** Starting with a basic implementation, and then improving it. 
+Libraries used: NumPy, Numba (and scikit-learn for comparison).
 
 <table style="float:centre">
 
 <tr>
-    <td><a href="#first-implementation">First implementation</a></td>
+    <td><a href="#First-implementation">First implementation</a></td>
     <td>A basic implementation of Naive Bayes.</td>
 </tr>
 <tr>
-    <td><a href="#second-implementation">Second implementation</a></td>
+    <td><a href="#Second-implementation">Second implementation</a></td>
     <td>The method is improved.</td>
 </tr>
 <tr>
-    <td><a href="#background-to-first-implementation">Background to first implementation</a></td>
+    <td><a href="#Background-to-first-implementation">Background to first implementation</a></td>
     <td>The theory behind the first implementation.</td>
 </tr>
 <tr>
-    <td><a href="#background-to-second-implementation">Background to second implementation</a> </td>
+    <td><a href="#Background-to-second-implementation">Background to second implementation</a> </td>
     <td>The theory behind the second implementation.</td>
 </tr>
 <tr>
-    <td><a href="#third-implementation">Third implementation</a></td>
+    <td><a href="#Third-implementation">Third implementation</a></td>
     <td>A more practical implementation.</td>
 </tr>
 <tr>
-    <td><a href="#references">References</a></td>
+    <td><a href="#References">References</a></td>
     <td></td>
 </tr>
 </table>
@@ -188,13 +188,13 @@ We end up with `probabilities[f][v][c]`, where an element is the probability of 
     - Allows us to make predictions for multiple vectors that have been stored in a matrix, of width `M`
 
 
-**The section <a href="#background-to-first-implementation">"Background to first implementation"</a> explains the theory of the method in more detail.**
+**The section <a href="#Background-to-first-implementation">"Background to first implementation"</a> explains the theory of the method in more detail.**
 
 ---
 
 ## Second implementation
 
-*Like the first implementation but modified to use smoothing and log probabilities. More explanation in <a href="#background-to-second-implementation">"Background to second implementation"</a>.*
+*Like the first implementation but modified to use smoothing and log probabilities. More explanation in <a href="#Background-to-second-implementation">"Background to second implementation"</a>.*
 
 
 ### Train model
@@ -213,7 +213,8 @@ def get_probs_of_values(column):
     for v in values:
         p[v] = [0]*len(classes)
         for c in classes:
-            p[v][c] = np.log(sum((column==v) & (y==c)) + alpha) - np.log(sum(y==c) + alpha*len(values))            
+            p[v][c] = (np.log(sum((column==v) & (y==c)) + alpha)
+                       - np.log(sum(y==c) + alpha*len(values)))
     return p
 
 probabilities = [0]*M
@@ -254,10 +255,10 @@ print(f"Accuracy on training data: {sum(y == predictions)/len(y)*100:.1f}%")
     Accuracy on training data: 70.0%
     
 
-Some practical improvements are made this implementation in the <a href="#third-implementation">third implementation</a>.
+Some practical improvements are made this implementation in the <a href="#Third-implementation">third implementation</a>.
 
 
-**The changes to the first implementation are motivated in <a href="#background-to-second-implementation">"Background to second implementation"</a>.**
+**The changes to the first implementation are motivated in <a href="#Background-to-second-implementation">"Background to second implementation"</a>.**
 
 ---
 
@@ -271,7 +272,7 @@ $$ \mathbf{x} = [x_0, \dots, x_f, \dots, x_{M-1}] $$
 
 Let $y$ be the class of instance $\mathbf{x}$. 
 
-For an $\mathbf{x}$ with an unknown class $y$, we can classify $\mathbf{x}$ by predicting $y$ to be the class $c$ that has the highest probability, given the value of $x$. I.e. we want to find the $c$ that maximises:
+For an $\mathbf{x}$ with an unknown class $y$, we can classify $\mathbf{x}$ by predicting $y$ to be the class $c$ that has the highest probability, given the value of $\mathbf{x}$. I.e. we want to find the $c$ that maximises:
 
 $$P(y = c \mid \mathbf{x} = [v_0, \dots, v_{M-1}])$$
 
@@ -373,13 +374,13 @@ We can also move the denominator out of the product:
 $$\hat{y} = \arg\max_c \left[\frac{1}{count(\mathbf{y} == c)}^{M-2} \prod_{f=0}^{M-1} count(X[:,f] == v_f {\&} \mathbf{y} == c) \right] $$
 
 
-**And that's the theory behind the <a href="#first-implementation">first implementation</a>**
+**And that's the theory behind the <a href="#First-implementation">first implementation</a>**
 
 ---
 
 ## Background to second implementation
 
-*Motivating the <a href="#second-implementation">second implementation</a>.*
+*Motivating the <a href="#Second-implementation">second implementation</a>.*
 
 There are two major improvements we can make to our Naive Bayes classifier:
 
@@ -455,7 +456,7 @@ For a particular class, $c$, the first and third terms will be constant, given a
 
 ## Third implementation
 
-This implementation computes the same thing as the <a href="#second-implementation">second implementation</a>, but:
+This implementation computes the same thing as the <a href="#Second-implementation">second implementation</a>, but:
 - slower parts are sped up
     - using [Numba](http://numba.pydata.org/)
     - using NumPy features, such as [broadcasting](https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html), and ['advanced' indexing](https://numpy.org/devdocs/user/basics.indexing.html)
@@ -511,7 +512,8 @@ class NaiveBayes:
         self._compute_terms_1_and_3()
     
     def _compute_counts(self, X, y):
-        self.counts = get_counts(X, y, self.len_feature_values, len(self.classes))
+        self.counts = get_counts(
+            X, y, self.len_feature_values, len(self.classes))
     
     def _compute_probabilities(self):
         self.probabilities = tuple(np.log(self.counts[f] + self.alpha) 
@@ -584,10 +586,10 @@ print(f"Predictions the same: {100*sum(predictions == pred_sklearn)/len(predicti
 %timeit clf_sklearn.predict(X)
 ```
 
-    145 ms ± 2.43 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
-    257 ms ± 2.44 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
-    136 ms ± 1.56 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
-    158 ms ± 2.7 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+    142 ms ± 1.24 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+    255 ms ± 323 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+    136 ms ± 3.67 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+    160 ms ± 2.78 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
     
 
 #### Unseen values
