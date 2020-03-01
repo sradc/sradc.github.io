@@ -3,11 +3,12 @@ layout: post
 title:  "Implementing Naive Bayes in Python"
 date:   2020-02-28 19:00:35 +0000
 categories: machine-learning python
+comments: true
 ---
 {%- include mathjax.html -%}
 
 
-[Sidney Radcliffe](https://sidsite.com/) | If you spot any mistakes [let me know](https://sidsite.com/contact/) | [Github](https://github.com/sradc/MyNotebooks/blob/master/notebooks/Implementing%20Naive%20Bayes%20in%20Python.ipynb)
+[Sidney Radcliffe](https://sidsite.com/) | [Github](https://github.com/sradc/MyNotebooks/blob/master/notebooks/Implementing%20Naive%20Bayes%20in%20Python.ipynb)
 
 
 **Implementing a [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) machine learning classifier in Python.** Starting with a basic implementation, and then improving it. 

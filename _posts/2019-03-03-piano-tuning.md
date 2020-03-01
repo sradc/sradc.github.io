@@ -3,6 +3,7 @@ layout: post
 title:  "Piano tuning"
 date:   2019-03-03 00:00:00 +0000
 categories: harmony music tuning music-theory
+comments: true
 ---
 {%- include mathjax.html -%}
 
