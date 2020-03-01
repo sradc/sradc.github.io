@@ -296,7 +296,7 @@ For certain notes and intervals these tuning
 systems may sound 'better' than equal temperament, but then for other notes and intervals the sound will be 'worse.
 
 
-## Conclusion
+### Disclaimer
 
 The author has never tuned a real piano.     
 
