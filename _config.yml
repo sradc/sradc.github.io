@@ -22,7 +22,7 @@ title: sidsite
 author: Sidney Radcliffe
 email: sidneyradcliffe@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my personal website.
+  The site of Sid.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://sidsite.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:

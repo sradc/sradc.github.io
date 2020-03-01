@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: page
 title: Piano Tuning
-permalink: /articles/190303PianoTuning
+permalink: /articles/190303PianoTuning/
 nolink: true
 ---
 
