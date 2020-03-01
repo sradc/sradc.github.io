@@ -296,10 +296,6 @@ For certain notes and intervals these tuning
 systems may sound 'better' than equal temperament, but then for other notes and intervals the sound will be 'worse.
 
 
-### Disclaimer
-
-The author has never tuned a real piano.     
-
 ## References:
 
 <a id="ref1" href="https://en.wikipedia.org/wiki/Equal_temperament">
