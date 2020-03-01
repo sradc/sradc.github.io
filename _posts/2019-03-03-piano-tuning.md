@@ -285,13 +285,12 @@ $$ r = 2^{k/12}$$
 
 The $n$s have cancelled out! 
 The ratio of frequencies, $r$, only depends on the number of semitones between the two notes, $k$.
-This explains why in equal temperament an interval 
-such as a third has the same character even as you move 
+This explains why in equal temperament, any interval
+(e.g. a third), has the same character even as you move 
 it up and down the keyboard: 
 the $n$ may change,
 but the $k$ stays the same, 
 and hence the ratio of frequencies stays the same.
-This is true for all intervals in equal temperament.
 
 Other tuning systems, such as just intonation [[5]](#ref5),
 lack this property, meaning that a given interval can sound more like the interval, 
