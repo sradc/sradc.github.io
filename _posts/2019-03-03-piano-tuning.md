@@ -257,9 +257,13 @@ We can write the frequency ratio for the two notes as:
 
 $$r = \frac{freq(n+k)}{freq(n)}$$
 
+<br>
+
 Let's plug in our expression for $freq(n)$ from above:
 
 $$ r = \frac{440 * 2^{(n+k-49)/12}}{440 * 2^{(n - 49)/12}} $$
+
+<br>
 
 And simplify:
 
@@ -279,10 +283,10 @@ $$ r = 2^{k/12}$$
 
 <br>
 
-The $n$s have cancelled out..! 
+The $n$s have cancelled out! 
 The ratio of frequencies, $r$, only depends on the number of semitones between the two notes, $k$.
-This explains why an interval 
-such as a third sounds like a third even as you move 
+This explains why in equal temperament an interval 
+such as a third has the same character even as you move 
 it up and down the keyboard: 
 the $n$ may change,
 but the $k$ stays the same, 
