@@ -17,27 +17,27 @@ Libraries used: NumPy, Numba (and scikit-learn for comparison).
 <table style="float:centre">
 
 <tr>
-    <td><a href="#First-implementation">First implementation</a></td>
+    <td><a href="#first-implementation">First implementation</a></td>
     <td>A basic implementation of Naive Bayes.</td>
 </tr>
 <tr>
-    <td><a href="#Second-implementation">Second implementation</a></td>
+    <td><a href="#second-implementation">Second implementation</a></td>
     <td>The method is improved.</td>
 </tr>
 <tr>
-    <td><a href="#Background-to-first-implementation">Background to first implementation</a></td>
+    <td><a href="#background-to-first-implementation">Background to first implementation</a></td>
     <td>The theory behind the first implementation.</td>
 </tr>
 <tr>
-    <td><a href="#Background-to-second-implementation">Background to second implementation</a> </td>
+    <td><a href="#background-to-second-implementation">Background to second implementation</a> </td>
     <td>The theory behind the second implementation.</td>
 </tr>
 <tr>
-    <td><a href="#Third-implementation">Third implementation</a></td>
+    <td><a href="#third-implementation">Third implementation</a></td>
     <td>A more practical implementation.</td>
 </tr>
 <tr>
-    <td><a href="#References">References</a></td>
+    <td><a href="#references">References</a></td>
     <td></td>
 </tr>
 </table>
@@ -189,13 +189,13 @@ We end up with `probabilities[f][v][c]`, where an element is the probability of 
     - Allows us to make predictions for multiple vectors that have been stored in a matrix, of width `M`
 
 
-**The section <a href="#Background-to-first-implementation">"Background to first implementation"</a> explains the theory of the method in more detail.**
+**The section <a href="#background-to-first-implementation">"Background to first implementation"</a> explains the theory of the method in more detail.**
 
 ---
 
 ## Second implementation
 
-*Like the first implementation but modified to use smoothing and log probabilities. More explanation in <a href="#Background-to-second-implementation">"Background to second implementation"</a>.*
+*Like the first implementation but modified to use smoothing and log probabilities. More explanation in <a href="#background-to-second-implementation">"Background to second implementation"</a>.*
 
 
 ### Train model
@@ -256,10 +256,10 @@ print(f"Accuracy on training data: {sum(y == predictions)/len(y)*100:.1f}%")
     Accuracy on training data: 70.0%
     
 
-Some practical improvements are made this implementation in the <a href="#Third-implementation">third implementation</a>.
+Some practical improvements are made this implementation in the <a href="#third-implementation">third implementation</a>.
 
 
-**The changes to the first implementation are motivated in <a href="#Background-to-second-implementation">"Background to second implementation"</a>.**
+**The changes to the first implementation are motivated in <a href="#background-to-second-implementation">"Background to second implementation"</a>.**
 
 ---
 
@@ -375,13 +375,13 @@ We can also move the denominator out of the product:
 $$\hat{y} = \arg\max_c \left[\frac{1}{count(\mathbf{y} == c)}^{M-2} \prod_{f=0}^{M-1} count(X[:,f] == v_f {\&} \mathbf{y} == c) \right] $$
 
 
-**And that's the theory behind the <a href="#First-implementation">first implementation</a>**
+**And that's the theory behind the <a href="#first-implementation">first implementation</a>**
 
 ---
 
 ## Background to second implementation
 
-*Motivating the <a href="#Second-implementation">second implementation</a>.*
+*Motivating the <a href="#second-implementation">second implementation</a>.*
 
 There are two major improvements we can make to our Naive Bayes classifier:
 
@@ -457,7 +457,7 @@ For a particular class, $c$, the first and third terms will be constant, given a
 
 ## Third implementation
 
-This implementation computes the same thing as the <a href="#Second-implementation">second implementation</a>, but:
+This implementation computes the same thing as the <a href="#second-implementation">second implementation</a>, but:
 - slower parts are sped up
     - using [Numba](http://numba.pydata.org/)
     - using NumPy features, such as [broadcasting](https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html), and ['advanced' indexing](https://numpy.org/devdocs/user/basics.indexing.html)
