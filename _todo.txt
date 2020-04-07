@@ -1,10 +1,12 @@
 TODO:
+- Fix Pinterest share (wants an image?)
 - shorten the long code lines in Naive Bayes
 - fix the unbolded x in Naive Bayes
-- add share buttons, such as https://superdevresources.com/share-buttons-jekyll/
 
 
 DONE:
+- added share buttons, using https://sharingbuttons.io/
+
 - change syntax highlighting to match jupyter
     - (well, changed the background to gray, left the rest)
 
