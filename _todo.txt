@@ -1,4 +1,5 @@
 TODO:
+- update site image
 - Fix Pinterest share (wants an image?)
 - shorten the long code lines in Naive Bayes
 - fix the unbolded x in Naive Bayes
