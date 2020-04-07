@@ -5,3 +5,5 @@ permalink: /contact/
 ---
 
 <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+
+<!-- Removed this redundant page -->
