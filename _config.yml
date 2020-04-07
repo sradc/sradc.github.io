@@ -28,6 +28,7 @@ url: "https://sidsite.com" # the base hostname & protocol for your site, e.g. ht
 twitter_username:
 github_username:  sradc
 google_analytics: UA-155353623-1
+rss: RSS
 
 collections:
   posts:
