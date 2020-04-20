@@ -30,10 +30,15 @@ github_username:  sradc
 google_analytics: UA-155353623-1
 rss: RSS
 
+
 collections:
   posts:
     output: true
     permalink: /posts/:title/
+  notes:
+    output: true
+    permalink: /notes/:year:month:day:title/
+
 
 # Build settings
 # theme: minima
@@ -44,6 +49,7 @@ plugins:
 
 disqus:
   shortname: sidneyradcliffe-com
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
