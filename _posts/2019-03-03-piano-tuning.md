@@ -2,7 +2,7 @@
 layout: post
 title:  "Piano tuning"
 date:   2019-03-03 00:00:00 +0000
-date_edited: 2020-04-01 00:00:00 +0000
+date_edited: 2020-04-20 00:00:00 +0000
 categories: harmony music tuning music-theory
 comments: true
 ---
@@ -301,7 +301,7 @@ For certain notes and intervals these tuning
 systems may sound 'better' than equal temperament, but then for other notes and intervals the sound may be 'worse'.
 
 
-## References:
+## References
 
 <a id="ref1" href="https://en.wikipedia.org/wiki/Equal_temperament">
 [1] https://en.wikipedia.org/wiki/Equal_temperament
