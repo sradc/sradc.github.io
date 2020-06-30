@@ -8,8 +8,7 @@ nolink: true
 # Resources
 This is a work in progress. I will link to interesting resources here.
 
----
-
+<br>
 
 ### [The Architecture of Open Source Applications.](http://aosabook.org/en/index.html)
 Tags: book, programming, software, architecture, code.
