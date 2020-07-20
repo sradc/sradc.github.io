@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Nautilus scripts (with Python and Bash examples)"
+title:  "Nautilus scripts with Python."
 date:   2020-07-20 00:00:00 +0000
 date_edited: 2020-07-20 00:00:00 +0000
 comments: true
