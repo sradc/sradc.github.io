@@ -10,15 +10,15 @@ comments: true
 
 Nautilus (Ubuntu's default file manager, a.k.a. 'Files') lets you run custom scripts from its context menu.
 
-- Put an executable in `~/.local/share/nautilus/scripts`
+- Put an executable in `~/.local/share/nautilus/scripts` \* 
 - Restart Nautilus, e.g. `nautilus -q`
 - Select files/folders, right click them (to open the context menu), and run the executable from Scripts > your_script.
-
-([Apparently](https://askubuntu.com/a/14705) 'in Ubuntu versions prior to 14.04 you put the executable in `~/.gnome2/nautilus-scripts`'.)
 
 This can be handy.
 
 Nautilus sets a few [variables](https://help.ubuntu.com/community/NautilusScriptsHowto) that your scripts can use. The most useful is 'NAUTILUS_SCRIPT_SELECTED_FILE_PATHS', which tells you the files/folders that have been selected.
+
+(\* [In Ubuntu versions prior to 14.04 you put the executable in](https://askubuntu.com/a/14705)  `~/.gnome2/nautilus-scripts`.)
 
 ### Debugging your scripts
 
@@ -92,8 +92,8 @@ Make executable: `chmod +x vscode`
 
 This opens Visual Studio Code in the directory that is open in Nautilus.
 
-## Resources:
+## References:
 
 - [https://help.ubuntu.com/community/NautilusScriptsHowto](https://help.ubuntu.com/community/NautilusScriptsHowto)
 - [https://askubuntu.com/a/14705](https://askubuntu.com/a/14705) - on Nautilus Scripts
-- [https://stackoverflow.com/a/4584567](https://stackoverflow.com/a/4584567) - where I discovered `nautilus --no-desktop`
+- [https://stackoverflow.com/a/4584567](https://stackoverflow.com/a/4584567)
