@@ -10,7 +10,7 @@ comments: true
 
 Nautilus (Ubuntu's default file manager, a.k.a. 'Files') lets you run custom scripts from its context menu.
 
-- Put an executable in `~/.local/share/nautilus/scripts` &nbsp; &nbsp; \* 
+- Put an executable in `~/.local/share/nautilus/scripts`
 - Restart Nautilus, e.g. `nautilus -q`
 - Select files/folders, right click them (to open the context menu), and run the executable from Scripts > your_script.
 
@@ -18,7 +18,7 @@ This can be handy.
 
 Nautilus sets a few [variables](https://help.ubuntu.com/community/NautilusScriptsHowto) that your scripts can use. The most useful is 'NAUTILUS_SCRIPT_SELECTED_FILE_PATHS', which tells you the files/folders that have been selected.
 
-\* [In Ubuntu versions prior to 14.04 you put the executable in](https://askubuntu.com/a/14705)  `~/.gnome2/nautilus-scripts`.
+[In Ubuntu versions prior to 14.04 you put the executable in](https://askubuntu.com/a/14705)  `~/.gnome2/nautilus-scripts`.
 
 ### Debugging your scripts
 
