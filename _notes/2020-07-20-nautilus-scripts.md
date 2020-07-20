@@ -14,6 +14,8 @@ Nautilus (Ubuntu's default file manager, a.k.a. 'Files') lets you run custom scr
 - Restart Nautilus, e.g. `nautilus -q`
 - Select files/folders, right click them (to open the context menu), and run the executable from Scripts > your_script.
 
+([Apparently](https://askubuntu.com/a/14705) 'in Ubuntu versions prior to 14.04 you put the executable in `~/.gnome2/nautilus-scripts`'.)
+
 This can be handy.
 
 Nautilus sets a few [variables](https://help.ubuntu.com/community/NautilusScriptsHowto) that your scripts can use. The most useful is 'NAUTILUS_SCRIPT_SELECTED_FILE_PATHS', which tells you the files/folders that have been selected.
