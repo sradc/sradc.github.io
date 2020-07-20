@@ -88,7 +88,7 @@ code .
 
 Make executable: `chmod +x vscode`
 
-This opens Visual Studio Code in the directory open in Nautilus.
+This opens Visual Studio Code in the directory that is open in Nautilus.
 
 ## Resources:
 
