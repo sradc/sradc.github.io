@@ -25,7 +25,7 @@ Nautilus sets a few [variables](https://help.ubuntu.com/community/NautilusScript
 
 ## A Python example
 
-`my-script:`
+`my-script`
 
 ```python
 #!/usr/bin/env python3
@@ -92,6 +92,6 @@ This opens Visual Studio Code in the directory open in Nautilus.
 
 ## Resources:
 
-- https://help.ubuntu.com/community/NautilusScriptsHowto
-- https://askubuntu.com/a/14705 - on Nautilus Scripts
-- https://stackoverflow.com/a/4584567 - where I discovered `nautilus --no-desktop`
+- [https://help.ubuntu.com/community/NautilusScriptsHowto](https://help.ubuntu.com/community/NautilusScriptsHowto)
+- [https://askubuntu.com/a/14705](https://askubuntu.com/a/14705) - on Nautilus Scripts
+- [https://stackoverflow.com/a/4584567](https://stackoverflow.com/a/4584567) - where I discovered `nautilus --no-desktop`
