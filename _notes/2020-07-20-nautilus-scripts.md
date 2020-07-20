@@ -6,7 +6,7 @@ date_edited: 2020-07-20 00:00:00 +0000
 comments: true
 ---
 
-(Tested on Ubuntu 18.04.4)
+*Tested on Ubuntu 18.04.4*
 
 Nautilus (Ubuntu's default file manager, a.k.a. 'Files') lets you run custom scripts from its context menu.
 
@@ -20,7 +20,7 @@ Nautilus sets a few [variables](https://help.ubuntu.com/community/NautilusScript
 
 ### Debugging your scripts
 
-`nautilus -q; nautilus --no-desktop` lets you see your_script's output in the terminal.
+`nautilus -q; nautilus --no-desktop` lets you see your script's output in the terminal.
 
 
 ## A Python example
