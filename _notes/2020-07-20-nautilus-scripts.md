@@ -71,12 +71,14 @@ for file in selected_files:
     p = Path(file)
     if p.suffix.lower() in ['.txt', '.md', '.markdown']:
         txt = p.read_text()
-        txt = txt.encode("unicode_escape").decode("utf-8")
+        txt = txt.replace('\n', '\\n')
         json_text = f'"{txt}"'
         p.with_suffix('.json').write_text(json_text)
 ```
 
 Make executable: `chmod +x txt-to-json`
+
+(Note, this conversion process has not been rigorously thought through, and may not always work..)
 
 ## Bash example
 
