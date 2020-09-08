@@ -38,6 +38,9 @@ collections:
   notes:
     output: true
     permalink: /notes/:year:month:day:title/
+  misc:
+    output: true
+    permalink: /misc/:title/
 
 
 # Build settings
