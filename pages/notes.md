@@ -7,7 +7,7 @@ permalink: /notes/
 {%- if site.notes.size > 0 -%}
 <h2 class="post-list-heading">{{ page.list_title | default: "Notes" }}</h2>
 <ul class="post-list">
-  {%- for post in site.notes -%}
+  {%- for post in site.notes reversed -%}
     {% unless post.nolink %}
     <li>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
