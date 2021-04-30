@@ -386,8 +386,6 @@ We are left with the questions:
 
 ---
 
-### Addendum
-
 Note that the first sentence of this post can be made more general:
 
 We can write any linear mapping (including the DFT) as an artificial neural network with no bias, no activation function, and particular values for the weights. This is because both linear mappings and linear neural network layers can be written as matrix multiplication.
