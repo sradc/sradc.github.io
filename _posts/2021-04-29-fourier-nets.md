@@ -25,7 +25,7 @@ MathJax = {
 
 *"Can neural networks learn the Fourier transform?"*
 
-We can consider the the discrete Fourier transform (DFT) to be an artificial neural network:
+We can consider the discrete Fourier transform (DFT) to be an artificial neural network:
 it is a single layer network, with no bias, no activation function, and particular values for the weights.
 The number of output nodes is equal to the number of frequencies we evaluate.
 
@@ -392,7 +392,7 @@ Note that the first sentence of this post can be made more general:
 
 We can write any linear mapping (including the DFT) as an artificial neural network with no bias, no activation function, and particular values for the weights. This is because both linear mappings and linear neural network layers can be written as matrix multiplication.
 
-We can take this further, and argue that all kinds of things are neural networks. But in actuality, having nonlinearities (i.e. activation functions), and multiple layers, is essential most of the time.
+We can take this further, and argue that all kinds of things are neural networks (which is a fun exercise). But in actuality, having nonlinearities, i.e. activation functions, and multiple layers, is essential most of the time.
 
 ---
 
