@@ -2,7 +2,7 @@
 layout: post
 title:  "The Fourier transform is a neural network"
 date:   2021-04-29 00:00:00 +0000
-date_edited:
+date_edited: 2021-04-30 00:00:00 +0000
 categories:
 comments: true
 nolink: false
@@ -26,7 +26,7 @@ MathJax = {
 *"Can neural networks learn the Fourier transform?"*
 
 We can consider the the discrete Fourier transform (DFT) to be an artificial neural network:
-it is a single layer network, with no bias, no activation function, and particular values for the weights. 
+it is a single layer network, with no bias, no activation function, and particular values for the weights.
 The number of output nodes is equal to the number of frequencies we evaluate.
 
 Here is the DFT:
@@ -377,13 +377,24 @@ Once again we get perfect reconstructions, so we know that the amplitudes and ph
 However, as before, the learned weights aren't exactly the same as the Fourier weights (but pretty close).
 So we can surmise that there is some flexibility in the weights that result in the Fourier transform, and that gradient descent takes us to a local optimum.
 
+---
 
-So, to conclude: neural networks can learn the Fourier transform.
-
-And this post leaves unaddressed the questions:
+We are left with the questions:
 
 - What is the explanation for the flexibility in the weights? How much flexibility is there?
 - Do we ever benefit from explicitly putting Fourier layers into our models? Or are we better off using good architectures and assuming the model will learn what it needs to?
+
+---
+
+### Addendum
+
+Note that the first sentence of this post can be made more general:
+
+We can write any linear mapping (including the DFT) as an artificial neural network with no bias, no activation function, and particular values for the weights. This is because both linear mappings and linear neural network layers can be written as matrix multiplication.
+
+We can take this further, and argue that all kinds of things are neural networks. But in actuality, having nonlinearities (i.e. activation functions), and multiple layers, is essential most of the time.
+
+---
 
 ### References
 
