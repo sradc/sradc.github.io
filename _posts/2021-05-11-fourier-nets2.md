@@ -9,17 +9,7 @@ nolink: false
 ---
 
 Two weeks ago, ["The Fourier transform is a neural network"](https://sidsite.com/posts/fourier-nets/) [1], reached the front page of Hacker News and gained traction on Twitter.
-
-However, it did face some criticism:
-
-> Is there anything deep here? There's a parametrized representation of a function and it's being interpreted as a neural network, why is this surprising?...
-[source](https://news.ycombinator.com/item?id=26981283) (top comment)
-
-> This is kind of silly. Neural networks are universal function approximators, meaning any function "is" (more accurately, "can be represented by") a neural network... [source](https://news.ycombinator.com/item?id=26981090)
-
-> ...Where do we go next ? -- look addition is a neural network, look weighted average is a neural network, look linear regression, logistic regression, Poisson regression are neural networks... [source](https://news.ycombinator.com/item?id=26980700)
-
-Many thanks to all who took the time to read the post and comment.
+Many thanks to all who took the time to read/comment on the post.
 
 The post ended with the question: 
 
