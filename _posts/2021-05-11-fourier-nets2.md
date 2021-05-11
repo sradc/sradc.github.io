@@ -19,7 +19,7 @@ However, it did face some criticism:
 
 > ...Where do we go next ? -- look addition is a neural network, look weighted average is a neural network, look linear regression, logistic regression, Poisson regression are neural networks... [source](https://news.ycombinator.com/item?id=26980700)
 
-These are all good points, and thanks also to the many other people who commented.
+Many thanks to all who took the time to read the post and comment.
 
 The post ended with the question: 
 
