@@ -19,13 +19,13 @@ And two days ago, Lee-Thorp et al. released [FNet: Mixing Tokens with Fourier Tr
 
 > ...we find that replacing the self-attention sublayer in a Transformer  encoder  with  a  standard,  unparameterized Fourier Transform achieves 92% of the accuracy of BERT on the GLUE benchmark, but pre-trains and runs up to seven times faster on GPUs and twice as fast on TPUs. The resulting model, which we name FNet, scales very efficiently to long inputs, matching the accuracy of the most accurate “efficient” Transformers on the Long Range Arena benchmark, but training  and  running  faster  across  all  sequence lengths on GPUs and relatively shorter sequence lengths on TPUs. Finally, FNet has a light memory footprint and is particularly efficient at smaller model sizes: for a fixed speed and accuracy budget, small FNet models outperform Transformer counterparts.
 
-Not only did they address the question that the post posed, but they also used the technique 
-presented  (with code) 
-in the post, i.e. creating a "Fourier matrix", to use as a Fourier layer:
+The paper also uses a technique presented in the blog post, i.e. creating a "Fourier matrix", to use as a Fourier layer (but they throw away the imaginary part):
 
 > On  TPUs:  for  relatively  shorter  sequences (≤8192 tokens), it is faster to precompute the DFT matrix and then compute the Fourier Transform through matrix multiplications than using the FFT; for longer sequences, the FFT is faster.
 
-Really interesting work; great to see!
+Although it seems likely that the FFT will eventually be made faster on TPUs.
+
+Really interesting work, great to see!
 
 ---
 
