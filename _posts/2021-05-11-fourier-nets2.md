@@ -2,7 +2,7 @@
 layout: post
 title:  "The Fourier transform is a neural network - follow-up"
 date:   2021-05-11 00:00:00 +0000
-date_edited: 2021-05-11 00:00:00 +0000
+date_edited: 2021-05-12 00:00:00 +0000
 categories:
 comments: true
 nolink: false
