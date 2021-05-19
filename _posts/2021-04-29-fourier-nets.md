@@ -320,10 +320,12 @@ And we pretty much learn the Fourier transform.
 The learned weights don't get as close to the Fourier weights as they did in the example above, 
 but the reconstructed signals are perfect.
 
-## Using amplitude + phase reconstruction
+## Amplitude and phase reconstruction (nonlinearities)
 
-Let's do the same as above, but using amplitude and phase.
-
+Let's now calculate the amplitude and phase of the sinusoids,
+and use these to reconstruct the signal.
+This time the gradient of the weights with w.r.t. the loss 
+has to go through nonlinearities (which are luckily, differentiable).
 
 ```python
 W_learned = tf.Variable(np.random.random([signal_length, 2 * signal_length]) - 0.5)
