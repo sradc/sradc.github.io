@@ -327,7 +327,8 @@ but the reconstructed signals are perfect.
 Let's now calculate the amplitude and phase of the sinusoids,
 and use these to reconstruct the signal.
 This time the gradient of the weights with w.r.t. the loss 
-has to go through nonlinearities (which, fortunately, are differentiable).
+has to go through nonlinearities (which, fortunately, are differentiable),
+because we haven't simplified the system into its linear form.
 
 ```python
 W_learned = tf.Variable(np.random.random([signal_length, 2 * signal_length]) - 0.5)
