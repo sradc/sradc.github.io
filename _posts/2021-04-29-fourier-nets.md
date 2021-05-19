@@ -264,7 +264,7 @@ if we are going to train a single layer to learn the Fourier transform, we might
 
 ## Learning the Fourier transform via reconstruction
 
-We used the FFT above, to teach the network to perform the Fourier transform. Let's not use it anymore, and instead learn the DFT by training the network to reconstruct the input signal. (Similar to autoencoders.)
+We used the FFT above, to teach the network to perform the Fourier transform. Let's not use it anymore, and instead learn the DFT by training the network to reconstruct the input signal.
 
 ```python
 W_learned = tf.Variable(np.random.random([signal_length, 2 * signal_length]) - 0.5)
