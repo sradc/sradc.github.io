@@ -203,6 +203,8 @@ plt.show()
 
 We don't need to pre-compute the weights, like we did above, we can instead *learn them*.
 
+(Note, [this](#amplitude-and-phase-reconstruction-nonlinearities) may be the most interesting example, since the system being optimized is nonlinear.)
+
 First, similarly to [endolith (see GitHub Gist)](https://gist.github.com/endolith/98863221204541bf017b6cae71cb0a89), we will use the FFT to train a network to carry out the DFT:
 
 
