@@ -10,8 +10,13 @@ nolink: false
 
 <iframe width="740" height="400" src="https://www.youtube.com/embed/DVKMpWnUppA" alt="Visualisation" frameborder="0" allowfullscreen></iframe>
 
-The visualisation shows a fully connected artificial neural network classifying [MNIST](https://en.wikipedia.org/wiki/MNIST_database) handwritten digits. The net consists of an input layer, an output layer, and no hidden layers. 
-The digits shown are from the test set.
+The visualisation shows a fully connected artificial neural network classifying [MNIST](https://en.wikipedia.org/wiki/MNIST_database) handwritten digits. The digits shown are from the test set. The net consists of an input layer, an output layer, and no hidden layers:
+
+
+<p align="center">
+    <img src="/assets/posts/mnist-visualised/net-sketch.png" width="500" alt="Sketch of the neural network"/>
+</p>
+
 
 Each column in the visualisation corresponds to an output node, and each output node corresponds to a class (from 0 to 9).
 The largest value output node (i.e. the tallest bar on the bottom row) tells us which class is predicted.
