@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Visualising of a fully connected neural network classifying MNIST digits"
+title:  "Visualising a fully connected neural network classifying MNIST digits"
 date:   2021-05-23 00:00:00 +0000
 date_edited: 2021-05-25 00:00:00 +0000
 categories:
