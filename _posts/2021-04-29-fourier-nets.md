@@ -2,7 +2,7 @@
 layout: post
 title:  "The Fourier transform is a neural network"
 date:   2021-04-29 00:00:00 +0000
-date_edited: 2021-05-19 00:00:00 +0000
+date_edited: 2021-05-31 00:00:00 +0000
 categories:
 comments: true
 nolink: false
@@ -23,7 +23,7 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
 
-*"Can neural networks learn the Fourier transform?"*
+*Or, less humorously: "Writing the Fourier transform as a neural network".*
 
 We can consider the discrete Fourier transform (DFT) to be an artificial neural network:
 it is a single layer network, with no bias, no activation function, and particular values for the weights.
