@@ -23,8 +23,6 @@ MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
 
-*Or, less humorously: "Writing the Fourier transform as a neural network".*
-
 We can consider the discrete Fourier transform (DFT) to be an artificial neural network:
 it is a single layer network, with no bias, no activation function, and particular values for the weights.
 The number of output nodes is equal to the number of frequencies we evaluate.
