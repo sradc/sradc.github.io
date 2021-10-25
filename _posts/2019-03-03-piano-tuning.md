@@ -2,7 +2,7 @@
 layout: post
 title:  "Piano tuning"
 date:   2019-03-03 00:00:00 +0000
-date_edited: 2020-04-20 00:00:00 +0000
+date_edited: 2021-10-25 00:00:00 +0000
 categories: harmony music tuning music-theory
 comments: true
 ---
@@ -10,10 +10,10 @@ comments: true
 
 *An introduction to equal temperament tuning.*
 
-You have been given a keyboard.
+You have been given a (**theoretical**) keyboard.
 Inconveniently, this keyboard has not been tuned.
 You'd like to play it, and therefore decide to tune it yourself.
-Luckily, the mechanics of tuning this (theoretical) keyboard are easy...
+Luckily, the mechanics of tuning this keyboard are easy...
 you just need to work out which frequency to
 assign to each note...
 
