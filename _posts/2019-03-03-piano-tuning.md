@@ -2,7 +2,7 @@
 layout: post
 title:  "Piano tuning"
 date:   2019-03-03 00:00:00 +0000
-date_edited: 2021-10-25 00:00:00 +0000
+date_edited: 2021-10-26 00:00:00 +0000
 categories: harmony music tuning music-theory
 comments: true
 ---
@@ -36,16 +36,16 @@ Great! But where to go from here?..
 
 ## The first frequency
 
-You allow your eyes to wander up and down the $88$ key keyboard...
+You allow your eyes to wander up and down the $88$ key (**theoretical**) keyboard...
 
-You realise that you could pick a relatively middling key on the keyboard, and assign to this a relatively
+You realise that you could pick a relatively middling key, and assign to this a relatively
 middling frequency.
 
 You choose $A4$ to be your middling key. You then play around
 with a tone generator, and decide that you
 perceive $\sim 440Hz$ to be a fairly middling frequency.
 
-You turn on your piano, and program in $freq(A4) = 440Hz$.
+You turn on your keyboard, and program in $freq(A4) = 440Hz$.
 
 Great! You have now tuned one note!
 
