@@ -5,7 +5,7 @@ date:   2021-05-11 00:00:00 +0000
 date_edited: 2021-05-12 00:00:00 +0000
 categories:
 comments: true
-nolink: true
+nolink: false
 ---
 
 Two weeks ago, ["The Fourier transform is a neural network"](https://sidsite.com/posts/fourier-nets/) [1], reached the front page of Hacker News and gained traction on Twitter.
@@ -25,7 +25,7 @@ The paper also uses a technique presented in the blog post, i.e. creating a "Fou
 
 Although it seems likely that the FFT will eventually be made faster on TPUs.
 
-Really interesting work, great to see!
+Interesting stuff!
 
 ---
 
