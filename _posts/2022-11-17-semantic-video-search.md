@@ -2,7 +2,7 @@
 layout: post
 title:  "Implementing semantic video search in 5 minutes using CLIP"
 date:   2022-11-17 00:00:00 +0000
-date_edited:
+date_edited: 2022-11-17 00:00:00 +0000
 categories:
 comments: true
 nolink: false
@@ -25,10 +25,6 @@ from tqdm import tqdm
 
 torch.set_printoptions(sci_mode=False)
 ```
-
-    /home/sid/miniconda3/envs/semantic-video-search/lib/python3.10/site-packages/tqdm/auto.py:22: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
-      from .autonotebook import tqdm as notebook_tqdm
-
 
 
 ```python
