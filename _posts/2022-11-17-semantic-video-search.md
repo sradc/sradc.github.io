@@ -11,7 +11,7 @@ nolink: false
 
 We'll implement a **naive** semantic video search using OpenAI's [CLIP](https://github.com/openai/CLIP) model (ignoring audio) in Python.
 
-(Scroll down if you want to skip to the results.)
+(Scroll down if you want to skip to the results. GitHub repo for this [here](https://github.com/sradc/semantic-video-search).)
 
 
 ```python
