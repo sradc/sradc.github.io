@@ -59,7 +59,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)  # will download ~340mb model
 ```
 
-## Rapid overview of how [CLIP](https://github.com/openai/CLIP) works
+## Quick overview of how [CLIP](https://github.com/openai/CLIP) works
 
 In brief, CLIP encodes images and text into the same vector space.
 
