@@ -7,11 +7,35 @@ categories:
 comments: true
 nolink: false
 ---
-# Implementing semantic video search in 5 minutes using CLIP
 
 We'll implement a **naive** semantic video search using OpenAI's [CLIP](https://github.com/openai/CLIP) model (ignoring audio) in Python.
 
-(Scroll down if you want to skip to the results. GitHub repo for this [here](https://github.com/sradc/semantic-video-search).)
+By the end of the post, we'll get results like this:
+
+```python
+query = "A man hanging from a boom barrier"
+frame, similarities = get_most_similar_frame(query)
+display_frame(frame)
+plot_search(query, similarities)
+```
+
+
+<p align="center">
+<img 
+    src="/assets/posts/semantic-video-search/main_19_0.png" 
+    alt="A man hanging from a boom barrier."
+/>
+</p>
+
+<p align="center">
+<img 
+    src="/assets/posts/semantic-video-search/main_19_1.png" 
+    alt="Plot for man hanging from a boom barrier."
+/>
+</p>
+
+
+(Scroll down if you want to see the rest. GitHub repo for this [here](https://github.com/sradc/semantic-video-search).)
 
 
 ```python
@@ -19,10 +43,13 @@ from pathlib import Path
 
 import clip
 import cv2
+import matplotlib.pyplot as plt
+import seaborn as sns
 import torch
 from PIL import Image
 from tqdm import tqdm
 
+sns.set_theme()
 torch.set_printoptions(sci_mode=False)
 ```
 
@@ -109,13 +136,13 @@ for x, distance in zip(["dog", "cat", "misc"], softmaxed_distances):
 
 So we can see that the model is pretty certain that "a photo of a dog" is the best of the options it was presented with to describe the image.
 
-Note that we won't actually need to do this softmax stuff, since we just care about the max value, which is preserved, (e.g. the dog was still the max value before the softmax).
+Note that we don't actually need to do this softmax stuff, since we just care about the max value, which is preserved, (e.g. the dog was still the max value before the softmax) - but it helps makes the results more interpretable.
 
 Now, how could we use this technology to carry out semantic search over video?...
 
 ## Download a video
 
-We'll grab a video that has varied visual content (since we're ignoring audio).
+We'll grab a video that has varied visual content (since we're ignoring audio). (It's a compilation of Buster Keaton stunts, check it [out](https://www.youtube.com/watch?v=frYIj2FGmMA).)
 
 
 ```python
@@ -159,7 +186,7 @@ for i in tqdm(range(frame_count)):
         )
 ```
 
-    100%|██████████| 7465/7465 [01:17<00:00, 95.86it/s] 
+    100%|██████████| 7465/7465 [01:17<00:00, 96.33it/s] 
 
 
 Most of the work was done here.
@@ -168,40 +195,36 @@ Next we create a function that will convert a "query" (i.e. a piece of text) int
 
 
 ```python
-def get_most_similar_frame(query: str) -> int:
+def get_most_similar_frame(query: str) -> tuple[int, list[float]]:
     query_vector = model.encode_text(clip.tokenize([query]).to(device))
     similarities = torch.cosine_similarity(image_vectors, query_vector)
     index = similarities.argmax().item()
-    return index
+    return index, similarities.squeeze()
 
 
 def display_frame(index: int):
     cap.set(cv2.CAP_PROP_POS_FRAMES, index)
     ret, frame = cap.read()
     display(Image.fromarray(frame))
+
+
+def plot_search(query, similarities):
+    plt.figure(figsize=(8, 4))
+    plt.plot((logit_scale * similarities).softmax(dim=0).tolist())
+    plt.title(f"Search of video frames for '{query}'")
+    plt.xlabel("Frame number")
+    plt.ylabel("Query-frame similarity (softmaxed)")
+    plt.show()
 ```
 
 ## Results
 
 
 ```python
-frame = get_most_similar_frame("A man hanging from a boom barrier")
+query = "A man sitting on the front of a train"
+frame, similarities = get_most_similar_frame(query)
 display_frame(frame)
-```
-
-
-<p align="center">
-<img 
-    src="/assets/posts/semantic-video-search/main_19_0.png" 
-    alt="A man hanging from a boom barrier."
-/>
-</p>
-
-
-
-```python
-frame = get_most_similar_frame("A man sitting on the front of a train")
-display_frame(frame)
+plot_search(query, similarities)
 ```
 
 
@@ -213,10 +236,20 @@ display_frame(frame)
 />
 </p>
 
+<p align="center">
+<img 
+    src="/assets/posts/semantic-video-search/main_20_1.png" 
+    alt="Plot for man hanging from a boom barrier."
+/>
+</p>
+
+
 
 ```python
-frame = get_most_similar_frame("A woman in water")
+query = "A woman in water"
+frame, similarities = get_most_similar_frame(query)
 display_frame(frame)
+plot_search(query, similarities)
 ```
 
 
@@ -228,10 +261,19 @@ display_frame(frame)
 />
 </p>
 
+<p align="center">
+<img 
+    src="/assets/posts/semantic-video-search/main_21_1.png" 
+    alt="Plot for man hanging from a boom barrier."
+/>
+</p>
+
 
 ```python
-frame = get_most_similar_frame("A man on a collapsing car")
+query = "A man on a collapsing car"
+frame, similarities = get_most_similar_frame(query)
 display_frame(frame)
+plot_search(query, similarities)
 ```
 
 
@@ -243,10 +285,19 @@ display_frame(frame)
 />
 </p>
 
+<p align="center">
+<img 
+    src="/assets/posts/semantic-video-search/main_22_1.png" 
+    alt="Plot for man hanging from a boom barrier."
+/>
+</p>
+
 
 ```python
-frame = get_most_similar_frame("A woman and man hanging in front of a waterfall")
+query = "A woman and man hanging in front of a waterfall"
+frame, similarities = get_most_similar_frame(query)
 display_frame(frame)
+plot_search(query, similarities)
 ```
 
 
@@ -258,19 +309,26 @@ display_frame(frame)
 />
 </p>
 
+<p align="center">
+<img 
+    src="/assets/posts/semantic-video-search/main_23_1.png" 
+    alt="Plot for man hanging from a boom barrier."
+/>
+</p>
 
-There is a lot of room for improvement,
+
+There's a lot of room for improvement,
 but this naive approach takes us surprisingly far... 
-(well, possibly not surprisingly, considering that we're making 
+(well, perhaps not surprisingly, considering that we're making 
 heavy use of an incredible piece of technology, CLIP).
 
-Improvements (thrown off the top of my head):
+Improvements (just throwing out ideas):
 - Batch encode video frames for a speed up
 - Skip very similar video frames (before and/or after embedding)
 - Use fast vector similarity search tooling, e.g. [faiss](https://github.com/facebookresearch/faiss)
 - Better embedding model is an option (e.g. a larger clip model)
-- Provide top K results (with some level of diversity enforced)
+- Provide top K results (could enforce some level of diversity/use peaks that are distanced over time)
 - And plenty more... 
 
-But this was a fun POC, and it's so awesome that models like CLIP are available to 
-be freely used, so thanks to those involved for that!
+This was a fun POC, and it's so awesome that models like CLIP are available to 
+be freely used!
