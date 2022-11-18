@@ -35,7 +35,7 @@ plot_search(query, similarities)
 </p>
 
 
-(Scroll down if you want to see the rest. GitHub repo for this [here](https://github.com/sradc/semantic-video-search).)
+(GitHub repo for this [here](https://github.com/sradc/semantic-video-search).)
 
 
 ```python
