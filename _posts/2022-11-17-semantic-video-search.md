@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Implementing semantic video search in 5 minutes using CLIP"
+title:  "How to implement semantic video search in 5 minutes using OpenAI's CLIP"
 date:   2022-11-17 00:00:00 +0000
-date_edited: 2022-11-17 00:00:00 +0000
+date_edited: 2022-11-18 00:00:00 +0000
 categories:
 comments: true
 nolink: false
