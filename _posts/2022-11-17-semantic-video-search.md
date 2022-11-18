@@ -57,15 +57,13 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)  # will download ~340mb model
 ```
 
-## Use [CLIP](https://github.com/openai/CLIP) to encode images and text into the same vector space
+## Rapid overview of how [CLIP](https://github.com/openai/CLIP) works
 
-- CLIP can take an image and turn it into a vector of size 512
-- CLIP can take a piece of text and turn it into a vector of size 512
-- If the text and image are similar, their vectors will be "similar" 
-    - (via cosine similarity - i.e. the vectors should be pointing in a similar direction)
-- Here's an example:
+In brief, CLIP encodes images and text into the same vector space.
 
-### Turn an image and some pieces of text into vectors:
+More concretely, CLIP can take an *image* and turn it into a vector of size 512, and CLIP can take a *piece of text* and turn it into a vector of size 512. If the text and image are similar, their vectors will be "similar" (via cosine similarity - i.e. the vectors should be pointing in a similar direction). Here's an example:
+
+### Turning images and text into vectors:
 
 
 ```python
