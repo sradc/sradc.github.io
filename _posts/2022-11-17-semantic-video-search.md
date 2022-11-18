@@ -8,7 +8,7 @@ comments: true
 nolink: false
 ---
 
-We'll implement a **naive** semantic video search using OpenAI's [CLIP](https://github.com/openai/CLIP) model (ignoring audio) in Python.
+We'll implement a **naive** semantic video search using OpenAI's [CLIP](https://github.com/openai/CLIP) model (ignoring audio) in Python. (GitHub repo for this post [here](https://github.com/sradc/semantic-video-search).)
 
 By the end of the post, we'll get results like this:
 
@@ -33,9 +33,6 @@ plot_search(query, similarities)
     alt="Plot for man hanging from a boom barrier."
 />
 </p>
-
-
-(GitHub repo for this [here](https://github.com/sradc/semantic-video-search).)
 
 
 ```python
