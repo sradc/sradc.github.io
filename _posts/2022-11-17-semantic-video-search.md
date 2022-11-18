@@ -35,6 +35,8 @@ plot_search(query, similarities)
 </p>
 
 
+First let's import the packages we need and load the model (it's ~340mb).
+
 ```python
 from pathlib import Path
 
