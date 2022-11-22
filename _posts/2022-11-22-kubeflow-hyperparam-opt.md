@@ -15,6 +15,7 @@ Screenshot of the execution of the Kubeflow pipeline we'll implement, where each
     src="/assets/posts/kubeflow-hyperparam-opt/pipeline_img.png"
     alt="Screenshot of the execution of the Kubeflow pipeline we'll implement"
 />
+</p>
 
 To "train" a machine learning model is to carry out some optimization process (e.g. gradient descent). But how do you know which kind of model to optimize in the first place, and which parameters to select for a given model (e.g. number of layers/trees/etc.)? Well, hopefully you can narrow things down a bit via domain knowledge (e.g. "I know that X type of model tends to work well on this type of data"), but unless you are very certain about your guess (or you don't particularly need to maximise performance), you'll probably want to carry out some kind of hyperparameter search. Two common techniques for this are grid search and random search, the latter often being used because it would take too long to carry out an exhaustive grid search. A third option is to explicitly treat the hyperparameter search itself as a function, e.g. `evaluate_model(hyperparameters) -> score`, and to use a "meta" model to optimize this function; we'll go with this option.
 
@@ -267,6 +268,7 @@ And... after some time... we get the our result, 0.8080302017230245, which is cl
     src="/assets/posts/kubeflow-hyperparam-opt/pipeline_results.png"
     alt="Screenshot of the pipeline results in the gui"
 />
+</p>
 
 ## References:
 
