@@ -233,10 +233,6 @@ compiler.Compiler().compile(
 )
 ```
 
-    /Users/sidneyradcliffe/miniforge3/envs/hyperkubeflow/lib/python3.10/site-packages/kfp/v2/compiler/compiler.py:1290: FutureWarning: APIs imported from the v1 namespace (e.g. kfp.dsl, kfp.components, etc) will not be supported by the v2 compiler since v2.0.0
-      warnings.warn(
-
-
 Now it's a matter of sending the pipeline json to the cloud:
 
 
