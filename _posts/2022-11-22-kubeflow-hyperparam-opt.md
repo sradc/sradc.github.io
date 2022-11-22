@@ -274,15 +274,15 @@ And... after some time... we get the our result, 0.8080302017230245, which is cl
 
 (In no particular order)
 
-- https://scikit-optimize.github.io/0.9/auto_examples/parallel-optimization.html
-- https://codelabs.developers.google.com/vertex-pipelines-intro
-- https://www.cloudskillsboost.google/focuses/21234?parent=catalog
-- https://www.kubeflow.org/docs/components/pipelines/v1/sdk-v2/python-function-components/
-- https://www.kubeflow.org/docs/components/pipelines/v2/author-a-pipeline/component-io/
-- https://kubeflow-pipelines.readthedocs.io/en/latest/source/kfp.dsl.html#kfp.dsl.ParallelFor
-- https://github.com/kubeflow/pipelines/issues/1933
-- https://github.com/kubeflow/pipelines/issues/3412
-- https://stackoverflow.com/questions/70358400/kubeflow-vs-vertex-ai-pipelines
+- [https://scikit-optimize.github.io/0.9/auto_examples/parallel-optimization.html](https://scikit-optimize.github.io/0.9/auto_examples/parallel-optimization.html)
+- [https://codelabs.developers.google.com/vertex-pipelines-intro](https://codelabs.developers.google.com/vertex-pipelines-intro)
+- [https://www.cloudskillsboost.google/focuses/21234?parent=catalog](https://www.cloudskillsboost.google/focuses/21234?parent=catalog)
+- [https://www.kubeflow.org/docs/components/pipelines/v1/sdk-v2/python-function-components/](https://www.kubeflow.org/docs/components/pipelines/v1/sdk-v2/python-function-components/)
+- [https://www.kubeflow.org/docs/components/pipelines/v2/author-a-pipeline/component-io/](https://www.kubeflow.org/docs/components/pipelines/v2/author-a-pipeline/component-io/)
+- [https://kubeflow-pipelines.readthedocs.io/en/latest/source/kfp.dsl.html#kfp.dsl.ParallelFor](https://kubeflow-pipelines.readthedocs.io/en/latest/source/kfp.dsl.html#kfp.dsl.ParallelFor)
+- [https://github.com/kubeflow/pipelines/issues/1933](https://github.com/kubeflow/pipelines/issues/1933)
+- [https://github.com/kubeflow/pipelines/issues/3412](https://github.com/kubeflow/pipelines/issues/3412)
+- [https://stackoverflow.com/questions/70358400/kubeflow-vs-vertex-ai-pipelines](https://stackoverflow.com/questions/70358400/kubeflow-vs-vertex-ai-pipelines)
     - "KubeFlow pipeline stages take a lot less to set up than Vertex in my experience (seconds vs couple of minutes). This was expected, as stages are just containers in KF, and it seems in Vertex full-fledged instances are provisioned to run the containers"
 
 
