@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A toy example of Bayesian hyperparameter optimization on multiple cloud VMs in parallel using Kubeflow (Python)"
+title:  "An example of Bayesian hyperparameter optimization parallelized on cloud VMs using Kubeflow"
 date:   2022-11-22 00:00:00 +0000
 date_edited:
 categories:
