@@ -2,6 +2,7 @@
 layout: default
 title: About
 permalink: /about
+nolink: true
 ---
 
 ## This site.
