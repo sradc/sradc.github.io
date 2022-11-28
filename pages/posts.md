@@ -3,5 +3,5 @@ layout: redirect
 title: Posts
 permalink: /posts/
 nolink: true
-redirect: sidsite.com
+redirect: https://sidsite.com
 ---
