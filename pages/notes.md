@@ -2,6 +2,7 @@
 layout: default
 title: Notes
 permalink: /notes/
+nolink: true
 ---
 
 {%- if site.notes.size > 0 -%}
