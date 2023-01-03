@@ -2,15 +2,15 @@
 layout: post
 title:  "How to implement semantic video search in 5 minutes using OpenAI's CLIP"
 date:   2022-11-17 00:00:00 +0000
-date_edited: 2022-11-18 00:00:00 +0000
+date_edited: 2023-01-03 00:00:00 +0000
 categories:
 comments: true
 nolink: false
 ---
 
-We'll implement a **naive** semantic video search using OpenAI's [CLIP](https://github.com/openai/CLIP) model in Python (ignoring audio). (GitHub repo for this post [here](https://github.com/sradc/semantic-video-search).)
+We'll implement a **naive** semantic video search (ignoring audio) using OpenAI's [CLIP](https://github.com/openai/CLIP) model, in Python. (GitHub repo for this post [here](https://github.com/sradc/semantic-video-search).)
 
-By the end of the post, we'll be able to search for content within a video by describing it with words:
+By the end of the post, we'll be able to search for content within a video by describing it with words, like this:
 
 ```python
 query = "A man hanging from a boom barrier"
