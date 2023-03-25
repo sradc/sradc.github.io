@@ -22,18 +22,16 @@ plot_search(query, similarities)
     src="/assets/posts/semantic-video-search/main_19_0.png" 
     alt="A man hanging from a boom barrier."
 />
-</p>
-
 *We do indeed find a frame of video where a man is hanging from a boom barrier.*
+</p>
 
 <p align="center">
 <img 
     src="/assets/posts/semantic-video-search/main_19_1.png" 
     alt="Plot for man hanging from a boom barrier."
 />
-</p>
-
 *This plot shows how likely the model thinks the frames of video are to contain the content of the query.*
+</p>
 
 We'll use OpenAI's open-source deep learning model, [CLIP](https://github.com/openai/CLIP). Audio will be ignored during the search. GitHub repo for this post [here](https://github.com/sradc/semantic-video-search).
 
