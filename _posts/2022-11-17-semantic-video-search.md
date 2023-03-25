@@ -8,7 +8,7 @@ comments: true
 nolink: false
 ---
 
-By the end of this post, we'll be able to search for specific visual content within a video by describing it with words. For instance, we could search for "a man hanging from a boom barrier," and the system would return the locations in the video where a it's likely that a man is hanging from a boom barrier.
+By the end of this post, we'll be able to search for specific visual content within a video by describing it in words. For instance, we could search for "a man hanging from a boom barrier," and the system would return the locations in the video where a it's likely that a man is hanging from a boom barrier.
 
 ```python
 query = "A man hanging from a boom barrier"
