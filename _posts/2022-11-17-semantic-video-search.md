@@ -68,7 +68,7 @@ model, preprocess = clip.load("ViT-B/32", device=device)  # will download ~340mb
 
 ### Turning images and text into vectors:
 
-The CLIP model we are using turns images into vectors of size 512, and pieces of text also into vectors of size 512. As mentioned above, if the text and image contain similar content, their vectors will be "similar". Here's a concrete example:
+The CLIP model we are using turns images into vectors of size 512, and pieces of text also into vectors of size 512. As mentioned above, we expect images and pieces of text that have similar content to have "similar" vectors. Here's a concrete example:
 
 ```python
 image = preprocess(Image.open("dog.jpeg")).unsqueeze(0).to(device)
