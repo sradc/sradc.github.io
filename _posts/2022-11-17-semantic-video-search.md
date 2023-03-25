@@ -1,16 +1,14 @@
 ---
 layout: post
-title:  "How to implement semantic video search in 5 minutes using OpenAI's CLIP"
+title:  "How to implement visual content search in video using OpenAI's CLIP model, in Python"
 date:   2022-11-17 00:00:00 +0000
-date_edited: 2023-01-03 00:00:00 +0000
+date_edited: 2023-03-25 00:00:00 +0000
 categories:
 comments: true
 nolink: false
 ---
 
-We'll implement a **naive** semantic video search (ignoring audio) using OpenAI's [CLIP](https://github.com/openai/CLIP) model, in Python. (GitHub repo for this post [here](https://github.com/sradc/semantic-video-search).)
-
-By the end of the post, we'll be able to search for content within a video by describing it with words, like this:
+By the end of this post, we'll be able to search for specific visual content within a video by describing it with words. For instance, we could search for "a man hanging from a boom barrier," and the system would return the locations in the video where a it's likely that a man is hanging from a boom barrier.
 
 ```python
 query = "A man hanging from a boom barrier"
@@ -18,7 +16,6 @@ frame, similarities = get_most_similar_frame(query)
 display_frame(frame)
 plot_search(query, similarities)
 ```
-
 
 <p align="center">
 <img 
@@ -34,8 +31,17 @@ plot_search(query, similarities)
 />
 </p>
 
+We'll use OpenAI's open-source deep learning model, [CLIP](https://github.com/openai/CLIP). Audio will be ignored during the search. GitHub repo for this post [here](https://github.com/sradc/semantic-video-search).
 
-First let's import the packages we need and load the model (it's ~340mb).
+### How does CLIP work?
+
+CLIP is a state-of-the-art deep learning model that has the remarkable ability to encode both text and image content into the same high-dimensional vector space. This means that it can represent an image of a dog and the text "A picture of a dog" as vectors that are expected to be close together in terms of cosine similarity. The closer the vectors, the more similar the content they represent. Conversely, if we were to encode a different image, such as one of a cat, into a vector, it would be farther away from the vectors of the dog image and text. This distance reflects the dissimilarity between the content they represent. By placing similar content vectors closer together and dissimilar content vectors farther apart, CLIP enables content-based retrieval and classification.
+
+Since a video is just a series of images, we can use this model to search over the visual content of a video using text.
+
+### Let's go
+
+First let's import the packages we need and load the model (its parameters are ~340mb).
 
 ```python
 from pathlib import Path
@@ -59,14 +65,10 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)  # will download ~340mb model
 ```
 
-## Quick overview of how [CLIP](https://github.com/openai/CLIP) works
-
-In brief, CLIP encodes images and text into the same vector space.
-
-More concretely, CLIP can take an *image* and turn it into a vector of size 512, and CLIP can take a *piece of text* and turn it into a vector of size 512. If the text and image are similar, their vectors will be "similar" (via cosine similarity - i.e. the vectors should be pointing in a similar direction). Here's an example:
 
 ### Turning images and text into vectors:
 
+The CLIP model we are using turns images into vectors of size 512, and pieces of text also into vectors of size 512. As mentioned above, if the text and image contain similar content, their vectors will be "similar". Here's a concrete example:
 
 ```python
 image = preprocess(Image.open("dog.jpeg")).unsqueeze(0).to(device)
@@ -105,11 +107,11 @@ print(f"misc similarity: {misc_similarity:.2f}")
     misc similarity: 0.20
 
 
-Note that dog has the highest value, which is what we would hope for since the image is of a dog. 
+Note that dog has the highest similarity value, which is what we would hope for since the image is of a dog. 
 
 But do the cat and misc values seem low enough compared to the dog value?
 
-Well, looking at the [CLIP codebase](https://github.com/openai/CLIP/blob/d50d76daa670286dd6cacf3bcd80b5e4823fc8e1/clip/model.py#L367) we can see that softmax with a temperature parameter (i.e. `logit_scale`) is used on the cosine similarities, like this:
+Well, looking at the [CLIP codebase](https://github.com/openai/CLIP/blob/d50d76daa670286dd6cacf3bcd80b5e4823fc8e1/clip/model.py#L367) we can see that softmax with a temperature parameter is used on the cosine similarities. We can use this to turn the above values into probabilities:
 
 
 ```python
@@ -131,15 +133,13 @@ for x, distance in zip(["dog", "cat", "misc"], softmaxed_distances):
     misc similarity: 0.0005
 
 
-So we can see that the model is pretty certain that "a photo of a dog" is the best of the options it was presented with to describe the image.
+Note that we don't need to do this softmax stuff for our search purposes, since we just care about the relative sizes of the values, which is preserved, (e.g. the dog was still the max value before the softmax) - but it helps makes the results more interpretable.
 
-Note that we don't actually need to do this softmax stuff, since we just care about the max value, which is preserved, (e.g. the dog was still the max value before the softmax) - but it helps makes the results more interpretable.
-
-Now, how could we use this technology to carry out semantic search over video?...
+Now, how can we use this technology to carry out semantic search over video?...
 
 ## Download a video
 
-We'll grab a video that has varied visual content (since we're ignoring audio). (It's a compilation of Buster Keaton stunts, check it [out](https://www.youtube.com/watch?v=frYIj2FGmMA).)
+Let's grab a video that has varied visual content (since we're ignoring audio). (It's a compilation of Buster Keaton stunts, check it [out](https://www.youtube.com/watch?v=frYIj2FGmMA).)
 
 
 ```python
@@ -314,18 +314,4 @@ plot_search(query, similarities)
 </p>
 
 
-There's a lot of room for improvement,
-but this naive approach takes us surprisingly far... 
-(well, perhaps not surprisingly, considering that we're making 
-heavy use of an incredible piece of technology, CLIP).
-
-Improvements (just throwing out ideas):
-- Batch encode video frames for a speed up
-- Skip very similar video frames (before and/or after embedding)
-- Use fast vector similarity search tooling, e.g. [faiss](https://github.com/facebookresearch/faiss)
-- Better embedding model is an option (e.g. a larger clip model)
-- Provide top K results (could enforce some level of diversity/use peaks that are distanced over time)
-- And plenty more... 
-
-This was a fun POC, and it's so awesome that models like CLIP are available to 
-be freely used!
+While there is room for improvement, our current approach has yielded surprisingly good results. Of course, we owe much of our success to the CLIP model.
