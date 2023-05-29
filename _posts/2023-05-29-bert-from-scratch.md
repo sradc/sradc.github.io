@@ -49,6 +49,7 @@ No hyperparameter tuning was carried out.
 No special techniques were used to improve the training.
 Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)),
 but the model architecture changes and other suggestions in Cramming were not used.
+I did a couple of smaller training runs first (~1-12 hours).
 
 I was able to monitor training remotely, using [Weights & Biases](https://wandb.ai/site).
 
