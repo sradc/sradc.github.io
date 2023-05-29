@@ -34,9 +34,9 @@ No hyperparameter tuning was carried out.
 No special techniques were used to improve the training.
 Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)), (but the model architecture changes and data ordering suggested by Cramming were not used).
 
-### Plots from the 100 hours training run
-
 I was able to monitor training remotely, using [Weights & Biases](https://wandb.ai/site).
+
+### Plots from the 100 hours training run
 
 <p align="center">
 <figure>
@@ -54,7 +54,7 @@ I was able to monitor training remotely, using [Weights & Biases](https://wandb.
         src="/assets/posts/bert-from-scratch/learning_rate.png" 
         alt="The learning rate schedule, recommended by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034))."
     />
-    <figcaption>The learning rate schedule, recommended by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)).</figcaption>
+    <figcaption>The learning rate schedule, recommended by Cramming (Geiping et al, 2022).</figcaption>
 </figure>
 </p>
 
@@ -82,9 +82,9 @@ I was able to monitor training remotely, using [Weights & Biases](https://wandb.
 <figure>
     <img 
         src="/assets/posts/bert-from-scratch/gpu_temp.png" 
-        alt="GPU temperature was relatively stable, with an increased temperature on hotter days."
+        alt="GPU temperature stayed between 76 - 80 degrees celsius, with a higher temperature on hotter days."
     />
-    <figcaption>GPU temperature was relatively stable, with an increased temperature on hotter days.</figcaption>
+    <figcaption>GPU temperature stayed between 76 - 80 degrees celsius, with a higher temperature on hotter days.</figcaption>
 </figure>
 </p>
 
