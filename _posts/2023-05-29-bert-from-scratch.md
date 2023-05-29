@@ -14,7 +14,7 @@ comments: true
     />
 </p>
 
-During my free time, I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC (with an Nvidia 3060 Ti 8GB GPU).
+During my free time, I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC, with its Nvidia 3060 Ti 8GB GPU.
 The model, trainer and tokenizer all come from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the code, setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running.
 
 After pretraining for 100 hours (1 epoch), and fine-tuning for 12 hours,
