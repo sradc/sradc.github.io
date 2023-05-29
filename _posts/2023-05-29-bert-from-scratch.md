@@ -19,7 +19,7 @@ comments: true
 </figure>
 </p>
 
-In my spare time, I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC. The model architecture, tokenizer, and training code all came from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the code, setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running. (And making sure it was working correctly, with good GPU utilization.)
+In my spare time, I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC. The model architecture, tokenizer, and training code all came from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the [code](https://github.com/sradc/pretraining-BERT/tree/main), setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running. (And making sure it was working correctly, with good GPU utilization.)
 
 People generally associate the training of large language models with GPU or TPU clusters, rather than desktop PCs, and the following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
 
@@ -53,8 +53,6 @@ Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 20
 but the model architecture changes and other suggestions in Cramming were not used.
 
 I was able to monitor training remotely, using [Weights & Biases](https://wandb.ai/site).
-
-<!-- TODO dataset and code available -->
 
 ### Plots from the 100 hours training run
 
