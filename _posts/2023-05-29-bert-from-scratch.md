@@ -7,7 +7,12 @@ categories:
 comments: true
 ---
 
-# Notes on training BERT from scratch on an 8GB consumer GPU
+<p align="center">
+    <img 
+        src="/assets/posts/bert-from-scratch/desktop.jpg" 
+        alt="Photo of my desktop PC"
+    />
+</p>
 
 During my free time, I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC (with an Nvidia 3060 Ti 8GB GPU).
 The model, trainer and tokenizer all come from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the code, setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running.
@@ -29,6 +34,10 @@ No hyperparameter tuning was carried out.
 No special techniques were used to improve the training.
 Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)), (but the model architecture changes and data ordering suggested by Cramming were not used).
 
+### Plots from the 100 hours training run
+
+I was able to monitor training remotely, using [Weights & Biases](https://wandb.ai/site).
+
 <p align="center">
 <figure>
     <img 
@@ -39,7 +48,6 @@ Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 20
 </figure>
 </p>
 
-
 <p align="center">
 <figure>
     <img 
@@ -47,6 +55,36 @@ Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 20
         alt="The learning rate schedule, recommended by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034))."
     />
     <figcaption>The learning rate schedule, recommended by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)).</figcaption>
+</figure>
+</p>
+
+<p align="center">
+<figure>
+    <img 
+        src="/assets/posts/bert-from-scratch/gpu_util.png" 
+        alt="GPU utilization was around 98%."
+    />
+    <figcaption>GPU utilization was around 98%.</figcaption>
+</figure>
+</p>
+
+<p align="center">
+<figure>
+    <img 
+        src="/assets/posts/bert-from-scratch/gpu_memory.png" 
+        alt="GPU memory usage was around 98%, this was achieved by adjusting the batch size."
+    />
+    <figcaption>GPU memory usage was around 98%, this was achieved by adjusting the batch size.</figcaption>
+</figure>
+</p>
+
+<p align="center">
+<figure>
+    <img 
+        src="/assets/posts/bert-from-scratch/gpu_temp.png" 
+        alt="GPU temperature was relatively stable, with an increased temperature on hotter days."
+    />
+    <figcaption>GPU temperature was relatively stable, with an increased temperature on hotter days.</figcaption>
 </figure>
 </p>
 
