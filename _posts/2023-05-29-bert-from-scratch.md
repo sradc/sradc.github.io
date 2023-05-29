@@ -45,14 +45,15 @@ The following table shows the GLUE-dev results in more detail:
 
 While we can see that BERT-Base performed better at every task; the results for "this model" would have been very good (possibly SOTA for a few tasks) in early 2018. 
 
-This endeavor was inspired by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)),
-a paper on how to train well-performing BERT models, on modest compute resources (in only 24 hours).
 No hyperparameter tuning was carried out.
 No special techniques were used to improve the training.
 Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)),
 but the model architecture changes and other suggestions in Cramming were not used.
 
 I was able to monitor training remotely, using [Weights & Biases](https://wandb.ai/site).
+
+This endeavor was inspired by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)),
+a paper on how to train well-performing BERT models, on modest compute resources (in only 24 hours).
 
 ### Plots from the 100 hours training run
 
