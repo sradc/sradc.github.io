@@ -15,7 +15,7 @@ comments: true
         src="/assets/posts/bert-from-scratch/desktop.jpg" 
         alt="Photo of my desktop PC, with its Nvidia 3060 Ti 8GB GPU."
     />
-    <figcaption>My desktop PC, with its Nvidia 3060 Ti 8GB GPU.</figcaption>
+    <figcaption>My PC, with its Nvidia 3060 Ti 8GB GPU.</figcaption>
 </figure>
 </p>
 
