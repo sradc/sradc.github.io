@@ -106,6 +106,7 @@ I was able to monitor training remotely, using [Weights & Biases](https://wandb.
 </figure>
 </p>
 
+Code is available [here](https://github.com/sradc/pretraining-BERT/tree/main).
 
 ### References:
 - Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. arXiv:1810.04805 [cs], May 2019. URL [http://arxiv.org/abs/1810.04805](http://arxiv.org/abs/1810.04805).
