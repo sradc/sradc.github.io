@@ -7,8 +7,6 @@ categories:
 comments: true
 ---
 
-<!-- TODO: link to code -->
-
 <p align="center">
 <figure>
     <img
