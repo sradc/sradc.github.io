@@ -21,19 +21,18 @@ comments: true
 
 During my free time, I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC. The model architecture, tokenizer, and training code all came from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the code, setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running.
 
-People generally associate the training of large language models with GPU or TPU clusters, rather than desktop PCs.. The following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
+People generally associate the training of large language models with GPU or TPU clusters, rather than desktop PCs, and the following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
 
 <p align="center">
-<figure>
     <img
         src="/assets/posts/bert-from-scratch/bert_vs_this_model.png" 
         alt="Plot comparing compute resources and model performance on GLUE-dev."
     />
-    <figcaption>Plot comparing compute resources and model performance on GLUE-dev.</figcaption>
-</figure>
 </p>
 
-The plot gives an indication of the performance difference, via the [GLUE](https://gluebenchmark.com/) **dev-set** score. Fine-tuning on GLUE took ~12 hours in total, and a breakdown of the GLUE-dev results are shown here:
+Notably, BERT-base was pre-trained on ~30x more tokens of text in the same amount of time. BERT-base was able to train on ~40 epochs of its training data, while this model did just a single epoch.
+
+The [GLUE](https://gluebenchmark.com/) **dev-set** score is shown in the plot above, to give an idea of how well the model performs at natural language tasks. Fine-tuning on GLUE took ~12 hours in total. The following table shows the GLUE-dev results in more detail:
 
 | Model        | MNLI (m/mm) | SST-2 | STSB | RTE  | QNLI | QQP | MRPC | CoLA | Average |
 |--|--|--|--|--|--|--|--|--|--|
@@ -46,12 +45,14 @@ While we can see that BERT-Base performed better at every task; the results for 
 
 This endeavor was inspired by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)),
 a paper on how to train well-performing BERT models, on modest compute resources (in only 24 hours).
-
 No hyperparameter tuning was carried out.
 No special techniques were used to improve the training.
-Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)),(but the model architecture changes and data ordering suggested by Cramming were not used.
+Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)),
+but the model architecture changes and data ordering suggested by Cramming were not used.
 
 I was able to monitor training remotely, using [Weights & Biases](https://wandb.ai/site).
+
+<!-- TODO dataset and code available -->
 
 ### Plots from the 100 hours training run
 
