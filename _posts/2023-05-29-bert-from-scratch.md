@@ -50,7 +50,7 @@ a paper on how to train well-performing BERT models, on modest compute resources
 No hyperparameter tuning was carried out.
 No special techniques were used to improve the training.
 Optimizer and learning rate schedule were guided by Cramming ([Geiping et al, 2022](https://arxiv.org/abs/2212.14034)),
-but the model architecture changes and data ordering suggested by Cramming were not used.
+but the model architecture changes and other suggestions in Cramming were not used.
 
 I was able to monitor training remotely, using [Weights & Biases](https://wandb.ai/site).
 
