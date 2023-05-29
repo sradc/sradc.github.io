@@ -2,7 +2,7 @@
 layout: post
 title:  "Notes on training BERT from scratch on an 8GB consumer GPU"
 date:   2023-05-29 00:00:00 +0000
-date_edited:
+date_edited: 2023-05-29 00:00:00 +0000
 categories:
 comments: true
 ---
@@ -21,7 +21,7 @@ comments: true
 
 During my free time, I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC. The model architecture, tokenizer, and training code all came from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the code, setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running.
 
-People don't generally associate the training of large language models with desktop computers... The following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
+People generally associate the training of large language models with GPU or TPU clusters, rather than desktop PCs.. The following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
 
 <p align="center">
 <figure>
