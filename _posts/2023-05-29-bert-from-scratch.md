@@ -30,7 +30,7 @@ People generally associate the training of large language models with GPU or TPU
     />
 </p>
 
-Notably, BERT-base was pre-trained on ~30x more tokens of text in the same amount of time - BERT-base was able to train on ~40 epochs of its training data, while this model did just a single epoch.
+Notably, BERT-base was pre-trained on ~30x more tokens of text in the same amount of time; BERT-base saw ~40 epochs of its training data, while this model did just a single epoch of its data.
 
 The [GLUE](https://gluebenchmark.com/) **dev-set** score is shown in the plot above, to give an idea of how well the model performs at natural language tasks. 
 Fine-tuning on GLUE took ~12 hours in total (on top of the 4 days / ~100 hours of pretraining). 
