@@ -99,8 +99,6 @@ a paper on how to train well-performing BERT models, on modest compute resources
 </figure>
 </p>
 
-Code is available [here](https://github.com/sradc/pretraining-BERT/tree/main).
-
 ### References:
 - Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. arXiv:1810.04805 [cs], May 2019. URL [http://arxiv.org/abs/1810.04805](http://arxiv.org/abs/1810.04805).
 - Vaswani et al. (2017) Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention Is All You Need. arXiv:1706.03762 [cs], December 2017. URL [http://arxiv.org/abs/1706.03762](http://arxiv.org/abs/1706.03762). 
