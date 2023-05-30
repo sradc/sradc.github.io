@@ -2,7 +2,7 @@
 layout: post
 title:  "Notes on training BERT from scratch on an 8GB consumer GPU"
 date:   2023-05-29 00:00:00 +0000
-date_edited: 2023-05-29 00:00:00 +0000
+date_edited: 2023-05-30 00:00:00 +0000
 categories:
 comments: true
 ---
