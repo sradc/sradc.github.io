@@ -7,17 +7,7 @@ categories:
 comments: true
 ---
 
-<p align="center">
-<figure>
-    <img
-        src="/assets/posts/bert-from-scratch/desktop.jpg" 
-        alt="Photo of my desktop PC, with its Nvidia 3060 Ti 8GB GPU."
-    />
-    <figcaption>My PC, with its Nvidia 3060 Ti 8GB GPU.</figcaption>
-</figure>
-</p>
-
-I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC. The model architecture, tokenizer, and training code all came from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the [code](https://github.com/sradc/pretraining-BERT/tree/main), setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running. (And making sure it was working correctly, with good GPU utilization.)
+I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC (which has a Nvidia 3060 Ti 8GB GPU). The model architecture, tokenizer, and training code all came from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the [code](https://github.com/sradc/pretraining-BERT/tree/main), setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running. (And making sure it was working correctly, with good GPU utilization.)
 
 People generally associate the training of large language models with GPU or TPU clusters, rather than desktop PCs, and the following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
 
