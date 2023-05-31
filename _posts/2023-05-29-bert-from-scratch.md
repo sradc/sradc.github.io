@@ -12,7 +12,7 @@ I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) 
 - The code is available as a Jupyter notebook, [here](https://github.com/sradc/pretraining-BERT/blob/main/pretraining_BERT.ipynb).
 - The dataset is available as a Hugging Face dataset, [here](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen).
 
-People generally associate the training of large language models with GPU or TPU clusters, rather than desktop PCs, and the following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
+The training of large language models is generally associated with GPU or TPU clusters, rather than desktop PCs, and the following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
 
 <p align="center">
     <img
@@ -21,7 +21,7 @@ People generally associate the training of large language models with GPU or TPU
     />
 </p>
 
-Notably, although both BERT-base and this model were trained for the same amount of time, BERT-base saw ~30x more tokens of text, (BERT-base saw ~40 epochs of its training data, while this model saw just a single epoch of its training data).
+Although both BERT-base and this model were trained for the same amount of time, BERT-base saw ~30x more tokens of text, (BERT-base saw ~40 epochs of its training data, while this model saw just a single epoch of its training data).
 
 The [GLUE](https://gluebenchmark.com/) **dev-set** score is shown in the plot above, to give an idea of how well the model performs at natural language tasks. 
 Fine-tuning on GLUE took ~12 hours in total (on top of the 4 days / ~100 hours of pretraining). 
