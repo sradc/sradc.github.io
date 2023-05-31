@@ -10,7 +10,7 @@ comments: true
 I trained a BERT model ([Devlin et al, 2019](https://arxiv.org/abs/1810.04805)) from scratch on my desktop PC (which has a Nvidia 3060 Ti 8GB GPU). The model architecture, tokenizer, and trainer all came from [Hugging Face](https://huggingface.co/) libraries, and my contribution was mainly setting up the [code](https://github.com/sradc/pretraining-BERT/tree/main), setting up the [data](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen) (~20GB uncompressed text), and leaving my computer running. (And making sure it was working correctly, with good GPU utilization.)
 
 - The code is available as a Jupyter notebook, [here](https://github.com/sradc/pretraining-BERT/blob/main/pretraining_BERT.ipynb).
-- The dataset is available as a Hugging Face dataset, [here](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen).
+- The data is available as a Hugging Face dataset, [here](https://huggingface.co/datasets/sradc/chunked-shuffled-wikipedia20220301en-bookcorpusopen).
 
 The training of large language models is generally associated with GPU or TPU clusters, rather than desktop PCs, and the following plot illustrates the difference between the compute resources I used to train this model, and the resources used to train the original BERT-base model.
 
