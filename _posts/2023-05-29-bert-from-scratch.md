@@ -100,6 +100,7 @@ a paper on how to train well-performing BERT models, on modest compute resources
 </p>
 
 ### References:
+- Geiping, Jonas, and Tom Goldstein. "Cramming: Training a Language Model on a Single GPU in One Day." arXiv preprint arXiv:2212.14034 (2022). URL [https://arxiv.org/abs/2212.14034](https://arxiv.org/abs/2212.14034).
 - Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. arXiv:1810.04805 [cs], May 2019. URL [http://arxiv.org/abs/1810.04805](http://arxiv.org/abs/1810.04805).
 - Vaswani et al. (2017) Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention Is All You Need. arXiv:1706.03762 [cs], December 2017. URL [http://arxiv.org/abs/1706.03762](http://arxiv.org/abs/1706.03762). 
 - Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. Improving language understanding with unsupervised learning. Technical report, OpenAI, [https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf)
