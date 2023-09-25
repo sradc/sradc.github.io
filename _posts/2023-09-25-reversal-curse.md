@@ -13,6 +13,8 @@ The authors have kindly released the code on [GitHub](https://github.com/lukasbe
 
 I had a go at improving the prompts, and did manage to get a significant boost in performance: 
 
+#### Experiment 2 results with improved prompts
+
 | model          | original accuracy | improved accuracy |
 | -------------- | ----------------- | ----------------- |
 | gpt-4          | 33%              | 57%               |
@@ -36,7 +38,7 @@ Does this have significance with regards to the key findings of the paper? Proba
 
 ## The impact of the prompt
 
-I hope the above results highlight how much of a difference prompting can make, (with current gen LLMs). With that in mind, let's look at the prompts.
+The above results highlight how much of a difference prompting can make, (with current gen LLMs). With that in mind, let's look at the prompts.
 
 The original prompt (taken from the codebase) is here:
 
