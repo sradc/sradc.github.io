@@ -38,7 +38,8 @@ Does this have significance with regards to the key findings of the paper? Proba
 
 ## The impact of the prompt
 
-The above results _do_ highlight how much of a difference prompting can make, (with current gen LLMs). With that in mind, let's look at the prompts.
+The above results _do_ highlight that prompting can make a big difference. 
+With that in mind, let's look at the prompts.
 
 The original prompt (taken from the codebase) is here:
 
@@ -111,6 +112,6 @@ The first prompt I tried was this:
 
 Which got an accuracy of 50% with gpt-4, and 45% with gpt-3.5-turbo.
 
-I haven't had the chance to do a proper ablation as to why these prompts have gotten a higher accuracy, (I'm trying to avoid speculating). However, running this has been rather expensive (I've spent ~$100 so far...), so not sure how much more I'll dig into it...
+I haven't had the chance to do a proper ablation as to why these prompts have gotten a higher accuracy, (I do have some _guesses_ but will refrain from speculating). However, running this has been rather expensive (I've spent ~$100 so far...), so not sure how much more I'll dig into it...
 
 I put my working in this [pull request](https://github.com/lukasberglund/reversal_curse/pull/4) into the original repo.
