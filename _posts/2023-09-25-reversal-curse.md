@@ -88,7 +88,10 @@ And the prompt I ended up using:
 > Maggie Grace<br>
 > Q: A parent of X is Bob Bill. Who is X?
 
-Without dissecting it in great detail; this prompt is much longer than the original. It tells the model to guess. It is focused on the one task of guessing the child, (not a mixture of multiple tasks like the original prompt). And it uses the fill in X formulation.
+Without dissecting it in great detail: it tells the model to guess,
+it only contains examples for the task at hand,
+it contains much more examples,
+and it uses the fill in X formulation.
 
 The first prompt I tried was this:
 
@@ -108,6 +111,6 @@ The first prompt I tried was this:
 
 Which got an accuracy of 50% with gpt-4, and 45% with gpt-3.5-turbo.
 
-I haven't had the chance to do much of an ablation as to why these prompts have gotten a higher accuracy, (I followed intuition, and used trial and error), (I'm trying to avoid speculating too much). Running this has been rather expensive (I've spent ~$100 so far...), so not currently sure how much more I'll dig into this...
+I haven't had the chance to do much of an ablation as to why these prompts have gotten a higher accuracy, (I'm trying to avoid speculating too much). However, running this has been rather expensive (I've spent ~$100 so far...), so not sure how much more I'll dig into this...
 
 I put my working in this [pull request](https://github.com/lukasberglund/reversal_curse/pull/4) into the original repo.
