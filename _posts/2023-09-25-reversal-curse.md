@@ -2,7 +2,7 @@
 layout: post
 title:  "Doubling the accuracy in 'The Reversal Curse' paper via prompting"
 date: 2023-09-25 00:00:00 +0000
-date_edited:
+date_edited: 2023-09-25 00:00:00 +0000
 categories:
 comments: true
 ---
