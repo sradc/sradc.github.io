@@ -9,7 +9,7 @@ comments: true
 
 [The Reversal Curse](https://arxiv.org/abs/2309.12288) (Sep 2023, Berglund et al.) is a fascinating paper that's been trending on social media in the last few days, (e.g. Twitter thread by Neel Nanda [here](https://twitter.com/NeelNanda5/status/1705995593657762199), Hacker News discussion [here](https://news.ycombinator.com/item?id=37621999)).
 
-The authors have kindly released the code on [GitHub](https://github.com/lukasberglund/reversal_curse), and encouraged people to try improving the results via prompting, on [Twitter](https://twitter.com/OwainEvans_UK/status/1705355610827739147).
+The authors have kindly released the code on [GitHub](https://github.com/lukasberglund/reversal_curse), and [encouraged](https://twitter.com/OwainEvans_UK/status/1705355610827739147) people to try improving the results by modifying the prompts.
 
 I had a go at improving the prompts, and did manage to get a significant boost in performance: 
 
