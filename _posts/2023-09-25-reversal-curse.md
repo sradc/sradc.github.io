@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Doubling the accuracy in 'The Reversal Curse' paper via prompting"
+title:  "Doubling the accuracy in 'The Reversal Curse' paper through prompting"
 date: 2023-09-25 00:00:00 +0000
 date_edited: 2023-09-25 00:00:00 +0000
 categories:
@@ -38,7 +38,7 @@ Does this have significance with regards to the key findings of the paper? Proba
 
 ## The impact of the prompt
 
-The above results _do_ highlight that prompting can make a big difference. 
+The above results do highlight that prompting can make a big difference. 
 With that in mind, let's look at the prompts.
 
 The original prompt (taken from the codebase) is here:
