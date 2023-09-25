@@ -29,7 +29,7 @@ So the original accuracies have gone up by quite a lot. In the case of `gpt-3.5-
 
 Does this have significance with regards to the key findings of the paper? Probably not, as pointed out by Owain Evans in a [Tweet](https://x.com/OwainEvans_UK/status/1705697503776231444):
 
-> It's cool, but unless you're getting >90% (maybe even higher) on this dataset then it doesn't undermine the conclusions we draw from this experiment. Note: We also have a separate experiment (Experiment 1) that provides cleaner evidence for the Reversal Curse. <p>
+> It's cool, but unless you're getting >90% (maybe even higher) on this dataset then it doesn't undermine the conclusions we draw from this experiment. Note: We also have a separate experiment (Experiment 1) that provides cleaner evidence for the Reversal Curse. <br>
 > GPT-4 has likely seen many of these parent-child pairs in both orders. Thus, when it succeeds on them it is not undermining the Reversal Curse. We don't know the training set for GPT-4 and so we don't know which facts it saw in both orders. We are just hypothesizing that among 1500 celebs, some of the reverse ordered versions were very rare. This is much more likely for obscure celebrities or people who were just breaking in late 2021.
 
 (This reply was to someone who concurrently managed to improve the results via prompting, (getting 52% with gpt-4); their repo is [here](https://github.com/clevcode/reversal-curse).)
@@ -108,4 +108,4 @@ Which got an accuracy of 50% with gpt-4, and 45% with gpt-3.5-turbo.
 
 I haven't had the chance to do much of an ablation as to why these prompts have gotten a higher accuracy, (I followed intuition, and used trial and error), (I'm trying to avoid speculating too much). Running this has been rather expensive (I've spent ~$100 so far...), so not currently sure how much more I'll dig into this...
 
-(I put my working in this [PR](https://github.com/lukasberglund/reversal_curse/pull/4) into the original repo.)
+I put my working in this [pull request](https://github.com/lukasberglund/reversal_curse/pull/4) into the original repo.
