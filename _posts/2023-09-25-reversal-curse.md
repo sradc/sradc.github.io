@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Doubling the accuracy in "The Reversal Curse" paper via prompting"
+title:  "Doubling the accuracy in 'The Reversal Curse' paper via prompting"
 date: 2023-09-25 00:00:00 +0000
 date_edited:
 categories:
@@ -106,4 +106,4 @@ The first prompt I tried was this:
 
 Which got an accuracy of 50% with gpt-4, and 45% with gpt-3.5-turbo.
 
-I haven't had the chance to do much of an ablation as to why these prompts have gotten a higher accuracy, (I followed intuition, and used trial and error). But running this is rather expensive (I've spent ~$100 on this so far...), so not currently sure how much more I'll dig into this...
+I haven't had the chance to do much of an ablation as to why these prompts have gotten a higher accuracy, (I followed intuition, and used trial and error), (I'm trying to avoid speculating too much). Running this has been rather expensive (I've spent ~$100 on this so far...), so not currently sure how much more I'll dig into this...
