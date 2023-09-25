@@ -13,11 +13,10 @@ The authors have kindly released the code on [GitHub](https://github.com/lukasbe
 
 I had a go at improving the prompts, and did manage to get a significant boost in performance: 
 
-```
-Model           Accuracy
-gpt-4:          33% -> 57% 
-gpt-3.5-turbo:  12% -> 51%
-```
+| model          | original accuracy | improved accuracy |
+| -------------- | ----------------- | ----------------- |
+| gpt-4          | 33%              | 57%               |
+| gpt-3.5-turbo  | 12%              | 51%               |
 
 <p align="center">
     <img
@@ -25,6 +24,8 @@ gpt-3.5-turbo:  12% -> 51%
         alt="Plot of accuracies in paper versus with the updated prompts"
     />
 </p>
+
+So the original accuracies have gone up by quite a lot. In the case of `gpt-3.5-turbo`, around 4x.
 
 Does this have significance with regards to the key findings of the paper? Probably not, as pointed out by Owain Evans in a [Tweet](https://x.com/OwainEvans_UK/status/1705697503776231444):
 
