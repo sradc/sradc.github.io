@@ -38,7 +38,7 @@ Does this have significance with regards to the key findings of the paper? Proba
 
 ## The impact of the prompt
 
-The above results highlight how much of a difference prompting can make, (with current gen LLMs). With that in mind, let's look at the prompts.
+The above results _do_ highlight how much of a difference prompting can make, (with current gen LLMs). With that in mind, let's look at the prompts.
 
 The original prompt (taken from the codebase) is here:
 
