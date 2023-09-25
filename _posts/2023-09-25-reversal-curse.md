@@ -90,7 +90,7 @@ And the prompt I ended up using:
 
 Without dissecting it in great detail: it tells the model to guess,
 it only contains examples for the task at hand,
-it contains much more examples,
+it contains many more examples,
 and it uses the fill in X formulation.
 
 The first prompt I tried was this:
