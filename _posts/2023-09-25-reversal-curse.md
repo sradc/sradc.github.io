@@ -15,17 +15,10 @@ I had a go at improving the prompts, and did manage to get a significant boost i
 
 #### Experiment 2 results with improved prompts
 
-| model          | original accuracy | improved accuracy |
-| -------------- | ----------------- | ----------------- |
-| gpt-4          | 33%              | 57%               |
-| gpt-3.5-turbo  | 12%              | 51%               |
-
-<p align="center">
-    <img
-        src="/assets/posts/reversal-curse/accuracy_plot.png" 
-        alt="Plot of accuracies in paper versus with the updated prompts"
-    />
-</p>
+| model          | original accuracy | improved accuracy | multiplier |
+| -------------- | ----------------- | ----------------- | -----------|
+| gpt-4          | 33%               | 57%               | 1.7        |
+| gpt-3.5-turbo  | 12%               | 51%               | 4.2        |
 
 So the original accuracies have gone up by quite a lot. In the case of `gpt-3.5-turbo` the accuracy has roughly quadrupled.
 
