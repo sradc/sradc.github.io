@@ -50,8 +50,8 @@ plugins:
   - jekyll-sitemap
 
 
-disqus:
-  shortname: sidneyradcliffe-com
+# disqus:
+#   shortname: sidneyradcliffe-com
 
 
 # Exclude from processing.
