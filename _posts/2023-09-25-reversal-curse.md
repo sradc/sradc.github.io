@@ -20,8 +20,6 @@ I had a go at improving the prompts, and did manage to get a significant boost i
 | gpt-4          | 33%               | 57%               | 1.7        |
 | gpt-3.5-turbo  | 12%               | 51%               | 4.2        |
 
-So the original accuracies have gone up by quite a lot. In the case of `gpt-3.5-turbo` the accuracy has roughly quadrupled.
-
 Does this have significance with regards to the key findings of the paper? Probably not, as pointed out by Owain Evans in a [Tweet](https://x.com/OwainEvans_UK/status/1705697503776231444):
 
 > It's cool, but unless you're getting >90% (maybe even higher) on this dataset then it doesn't undermine the conclusions we draw from this experiment. Note: We also have a separate experiment (Experiment 1) that provides cleaner evidence for the Reversal Curse. <br>
