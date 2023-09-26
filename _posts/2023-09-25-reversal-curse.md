@@ -46,7 +46,8 @@ The original prompt (taken from the codebase) is here:
 And the prompt I ended up using:
 
 > system: You are a helpful assistant, being quizzed on celebrities. If you are not sure, you **must** guess a name. Respond with **only** the name.<br>
-> user: This is a quiz on the family connections of celebrities. Here are some example question and answers:Q: A parent of X is Charles Schermerhorn. Who is X?<br>
+> user: This is a quiz on the family connections of celebrities. Here are some example question and answers:<br>
+> Q: A parent of X is Charles Schermerhorn. Who is X?<br>
 > Alison Brie<br>
 > Q: A parent of X is Barbara Parker. Who is X?<br>
 > Sarah Jessica Parker<br>
@@ -82,6 +83,7 @@ And the prompt I ended up using:
 
 A few differences:
 - it tells the model to guess
+- it tells the model that the answer will be a celebrity
 - it only contains examples for the task at hand
 - it contains many more examples
 - it uses the fill in X formulation
