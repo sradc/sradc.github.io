@@ -105,4 +105,4 @@ Which got an accuracy of 50% with gpt-4, and 45% with gpt-3.5-turbo.
 
 I haven't had the chance to do a proper ablation as to why these prompts have gotten a higher accuracy, (I do have some _guesses_ but will refrain from speculating). However, running this has been rather expensive (I've spent ~$100 so far...), so not sure how much more I'll dig into it...
 
-I put my working in this [pull request](https://github.com/lukasberglund/reversal_curse/pull/4) into the original repo.
+I put my working in this [pull request](https://github.com/lukasberglund/reversal_curse/pull/4) in the official repo.
