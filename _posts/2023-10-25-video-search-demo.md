@@ -8,6 +8,8 @@ comments: true
 nolink: false
 ---
 
+[*Link to the demo.*](https://huggingface.co/spaces/sradc/visual-content-search-over-videos)
+
 This morning I came across Simon Willison's great introduction to embeddings, [Embeddings: What they are and why they matter](https://simonwillison.net/2023/Oct/23/embeddings/), and it reminded me that I never got around to writing up a demo a friend and I made using this technology... As is mentioned in the post, retrieval via embeddings doesn't just apply to text, but to pretty much any content you can train neural networks on, including images. 
 
 For our demo, we took ~1400 music videos and turned the frames into embeddings, making it possible to search over the visual content of the videos. You can try it out [here](https://huggingface.co/spaces/sradc/visual-content-search-over-videos). The source code is [here](https://huggingface.co/spaces/sradc/visual-content-search-over-videos/tree/main).
