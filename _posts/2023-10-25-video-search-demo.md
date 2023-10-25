@@ -49,7 +49,7 @@ Here are some examples:
     />
 </p>
 
-I wrote a more detailed post about how to implement this kind of thing [here](https://sidsite.com/posts/semantic-video-search/), before going on to make this demo.
+I wrote a more detailed post about how to implement this kind of thing [here](https://sidsite.com/posts/semantic-video-search/).
 
 There are a few improvements we could make to this:
 - increase the number of videos, (means there's more chance you will find what you are looking for)
