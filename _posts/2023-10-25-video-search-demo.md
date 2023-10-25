@@ -16,35 +16,35 @@ Here are some examples:
 
 <p align="center">
     <img 
-        src="assets/posts/video-search-demo/blue-hair.png" 
+        src="/assets/posts/video-search-demo/blue-hair.png" 
         alt="Screenshot of demo, query: 'blue hair'"
     />
 </p>
 
 <p align="center">
     <img 
-        src="assets/posts/video-search-demo/blue-car.png" 
+        src="/assets/posts/video-search-demo/blue-car.png" 
         alt="Screenshot of demo, query: 'blue car'"
     />
 </p>
 
 <p align="center">
     <img 
-        src="assets/posts/video-search-demo/j-dancing.png" 
+        src="/assets/posts/video-search-demo/j-dancing.png" 
         alt="Screenshot of demo, query: 'jamiroquai dancing'"
     />
 </p>
 
 <p align="center">
     <img 
-        src="assets/posts/video-search-demo/picture-of-nature.png" 
+        src="/assets/posts/video-search-demo/picture-of-nature.png" 
         alt="Screenshot of demo, query: 'picture of nature'"
     />
 </p>
 
 <p align="center">
     <img 
-        src="assets/posts/video-search-demo/dancing-urban.png" 
+        src="/assets/posts/video-search-demo/dancing-urban.png" 
         alt="Screenshot of demo, query: 'dancing in an urban environment'"
     />
 </p>
