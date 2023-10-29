@@ -2,7 +2,7 @@
 layout: post
 title:  "Analyzing Data 170,000x Faster with Python"
 date: 2023-10-29 00:00:00 +0000
-date_edited:
+date_edited: 2023-10-29 00:00:00 +0000
 categories:
 comments: true
 ---
@@ -12,6 +12,8 @@ The article, [Analyzing Data 180,000x Faster with Rust](https://willcrichton.net
 > There are lots of ways we could make the Python code faster, but the point of this post isn’t to compare highly-optimized Python to highly-optimized Rust. The point is to compare “standard-Jupyter-notebook” Python to highly-optimized Rust.
 
 The question arises: if we were to stick with Python, what kind of speed-ups could we achieve?
+
+In this post, we will go through a journey of profiling and iteratively speeding up the code, in Python.
 
 #### Replicating the original benchmarks
 
@@ -118,7 +120,7 @@ This lends itself to the following workflow for optimizing the code:
 If there are just a few lines taking up the majority of the time, we know what to focus on, and from the above we see that there's a particularly slow line, taking up ~70% of the time.
 
 
-### Optimization 1 - dictionary of sets of users who answered questions, `users_who_answered_q`
+### Optimization 1 - dictionary of sets of users who answered questions, _users_who_answered_q_
 
 The baseline carries out various heavy Pandas operations, to find out which users answered the current set of questions, `qs`. In particular, it checks every row of the dataframe to find out which users answered the questions. For the first optimization, instead of using the full dataframe, we can use a dictionary of sets. This lets us quickly look up which users answered each question in `qs`, and use Python's set intersection to find out which users anwered all of the questions.
 
@@ -149,7 +151,7 @@ This significantly speeds up the lines that compute, `answered_all`, which have 
 
 TODO: this is similar to the rust code (if it is)
 
-### Optimization 2 - `score_dict` dictionary
+### Optimization 2 - _score_dict_ dictionary
 
 If we add up the amount of time spent on each line that contributes to computing `qs_total`, (including the `qs_data` line), it comes to ~65%; so the next thing to optimize is clear. We can again switch out heavy operations on the full dataset, (indexing, grouping, etc.) with fast dictionary look ups. We introduce `score_dict`, a dictionary that lets us look up the score for a given question and user pair.
 
@@ -175,7 +177,7 @@ Speedup over baseline:   50.8x
 This gives us a nice 50x speed up.
 
 
-### Optimization 3 - `grand_totals` dictionary, and np.corrcoef
+### Optimization 3 - _grand_totals_ dictionary, and np.corrcoef
 
 The slowest line above does multiple things, it does a Pandas join, to combine the `grand_totals`, with the `qs_total`, and then it computes the correlation coefficient for this. Again, we can speed this up by using a dictionary lookup instead of a join, and since we no longer have Pandas objects, we use `np.corrcoef` instead of Pandas `corr`.
 
@@ -251,7 +253,7 @@ Speedup over baseline:   466.7x
 ```
 
 
-### Optimization 6 - `score_matrix` instead of dict
+### Optimization 6 - _score_matrix_ instead of dict
 
 The slowest line above is now the computation of `qs_total`. Following the example of the original article, we switch to using a dense np.array to look up the scores, instead of a dictionary, and use fast NumPy indexing to get the scores.
 
@@ -275,7 +277,7 @@ Speedup over baseline:   623.7x
 ```
 
 
-### Optimization 7 - custom `corrcoef`
+### Optimization 7 - custom _corrcoef_
 
 The slowest line above is `np.corrcoef`... We will do what it takes to optimize our code, so here's our own corrcoef implementation, that's twice as fast for this use case:
 
@@ -364,14 +366,14 @@ def compute_corrs(qs_combinations, users_who_answered_q, score_matrix, grand_tot
 
 (Note that we also decorated `corrcoef` with Numba, because the functions called within a Numba function also need to have been compiled.)
 
-#### Results, with `parallel=False`
+#### Results, with _parallel=False_
 
 ```
 Avg time per iteration:  47 μs
 Speedup over baseline:   742.2x
 ```
 
-#### Results, with `parallel=True`
+#### Results, with _parallel=True_
 
 ```
 Avg time per iteration:  8.5 μs
@@ -452,7 +454,7 @@ Speedup over baseline:   64.2x
 It looks like we've regressed somewhat, with the `bitset_to_list` operation taking up a lot of time.
 
 
-### Optimization 9 - Numba on `bitset_to_list`
+### Optimization 9 - Numba on _bitset_to_list_
 
 Let's convert `bitset_to_list` into compiled code. To do this we can add a Numba decorator:
 
@@ -497,7 +499,7 @@ Speedup over baseline:   1801.2x
 
 We've got an 1,800x speed up over the original code. Recall that optimization 7, before Numba was introduced, got 814x. (Optimization 8 got 4142x, but that was with `parallel=True` on the inner loop, so it's not comparible to the above.)
 
-### Optimization 10 - Numba on `corrcoef`
+### Optimization 10 - Numba on _corrcoef_
 
 The corrcoef line is again standing out as slow above. Let's use `corrcoef` decorated with Numba.
 
@@ -541,7 +543,7 @@ Speedup over baseline:   3218.9x
 
 Nice, another big speedup.
 
-### Optimization 11 - Numba on `bitset_and`
+### Optimization 11 - Numba on _bitset_and_
 
 We also decorate `bitset_and` with Numba, and get a decent speed boost:
 
