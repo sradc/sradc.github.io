@@ -324,7 +324,7 @@ In order to be able to use Numba, we make two changes:
 
 Modification 1: Pass qs_combinations as numpy array, instead of `qs_iter`
 
-Numba doesn't play well with `itertools` or generators, so we turn `qs_iter` into a NumPy array in advance, to give to the function. The impact on the time is shown below.
+Numba doesn't play well with `itertools` or generators, so we turn `qs_iter` into a NumPy array in advance, to give to the function. The impact on the time, before including Numba is shown below.
 
 ```
 Avg time per iteration:  42 μs
@@ -333,7 +333,7 @@ Speedup over baseline:   829.2x
 
 Modification 2: Result array instead of list
 
-Rather than appending to a list, we initialise an array, and put the results in it.
+Rather than appending to a list, we initialise an array, and put the results in it. The impact on the time, before including Numba is shown below.
 
 ```
 Avg time per iteration:  42 μs
