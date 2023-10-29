@@ -149,8 +149,6 @@ Speedup over baseline:   3.5x
 
 This significantly speeds up the lines that compute, `answered_all`, which have gone from taking up 70% of the time, to 4%, and we are already over 3x faster than the baseline.
 
-TODO: this is similar to the rust code (if it is)
-
 ### Optimization 2 - _score_dict_ dictionary
 
 If we add up the amount of time spent on each line that contributes to computing `qs_total`, (including the `qs_data` line), it comes to ~65%; so the next thing to optimize is clear. We can again switch out heavy operations on the full dataset, (indexing, grouping, etc.) with fast dictionary look ups. We introduce `score_dict`, a dictionary that lets us look up the score for a given question and user pair.
