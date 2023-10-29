@@ -654,7 +654,7 @@ We start with `parallel=False`.
 
 ```
 Avg time per iteration:  1.7 μs
-Speedup over baseline:   20325.3x
+Speedup over baseline:   20850.5x
 ```
 
 This should be compared to optimization 12 with `parallel=False`, which measured as 8353x.
@@ -675,3 +675,7 @@ We've been able to get most of the things that made the optimized Rust code fast
 This was a fun exercise, that hopefully shows off some useful tools in the Python ecosystem.
 
 Would I recommend one approach over the other? No, it depends on the situation. 
+
+#### Notes
+
+The full Python code is [here](https://github.com/sradc/corrset-benchmark/tree/python-optimization/python_optimization).
