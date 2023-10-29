@@ -318,13 +318,13 @@ Speedup over baseline:   814.6x
 
 ### Optimization 8 - Premature introduction of Numba
 
-We haven't finished optimizing the data structures in the code above, but let's see what happens if we were to introduce [Numba](https://numba.pydata.org/) at this stage. Numba is a library in the Python ecosystem that "translates a subset of Python and NumPy code into fast machine code".
+We haven't finished optimizing the data structures in the code above, but let's see what would happen if we were to introduce [Numba](https://numba.pydata.org/) at this stage. Numba is a library in the Python ecosystem that "translates a subset of Python and NumPy code into fast machine code".
 
 In order to be able to use Numba, we make two changes:
 
 Modification 1: Pass qs_combinations as numpy array, instead of `qs_iter`
 
-Numba doesn't play well with `itertools` or generators, so we turn `qs_iter` into a NumPy array in advance, to give to the function. The impact on the time, before including Numba is shown below.
+Numba doesn't play well with `itertools` or generators, so we turn `qs_iter` into a NumPy array in advance, to give to the function. The impact of this change on the time, (before adding Numba), is shown below.
 
 ```
 Avg time per iteration:  42 μs
@@ -333,7 +333,7 @@ Speedup over baseline:   829.2x
 
 Modification 2: Result array instead of list
 
-Rather than appending to a list, we initialise an array, and put the results in it. The impact on the time, before including Numba is shown below.
+Rather than appending to a list, we initialise an array, and put the results in it. The impact of this change on the time, (before adding Numba), is shown below.
 
 ```
 Avg time per iteration:  42 μs
@@ -378,7 +378,7 @@ Avg time per iteration:  8.5 μs
 Speedup over baseline:   4142.0x
 ```
 
-We see that the Numba code isn't much faster than the Python code, with `parallel=False`, but when we turn on the parallesim, we get a start making good use of all of all of our CPU cores (8 on the machine running the benchmarks), which gives a good speed multiplier.
+We see that the Numba code isn't much faster than the Python code, with `parallel=False`, but when we turn on the parallelism, we start making use of all of all of our CPU cores (8 on the machine running the benchmarks), which gives a good speed multiplier.
 
 However, we lose the ability to use [line_profiler](https://github.com/pyutils/line_profiler), on the JIT compiled code; (we might want to start looking at the generated LLVM IR / assembly).
 
