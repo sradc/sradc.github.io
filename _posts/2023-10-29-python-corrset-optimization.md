@@ -203,7 +203,16 @@ This gives us a ~90x speedup.
 
 ### Optimization 4 - uuid strings to ints
 
-The next optimization doesn't alter the code in the inner loop at all. But it does speed up some of the operations. We replace the long user/question uuids, (e.g. `e213cc2b-387e-4d7d-983c-8abc19a586b1`), with, much shorter, ints.
+The next optimization doesn't alter the code in the inner loop at all. But it does speed up some of the operations. We replace the long user/question uuids, (e.g. `e213cc2b-387e-4d7d-983c-8abc19a586b1`), with, much shorter, ints. How it's done:
+
+```python
+data.user = data.user.map({u: i for i, u in enumerate(data.user.unique())})
+data.question = data.question.map(
+    {q: i for i, q in enumerate(data.question.unique())}
+)
+```
+
+And we measure:
 
 ```
 Avg time per iteration:  210 μs
