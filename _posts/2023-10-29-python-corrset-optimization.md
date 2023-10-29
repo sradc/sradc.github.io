@@ -543,7 +543,16 @@ Nice, another big speedup.
 
 ### Optimization 11 - Numba on _bitset_and_
 
-We also decorate `bitset_and` with Numba, and get a decent speed boost:
+Instead of using `np.bitwise_and.reduce`, we introduce `bitwise_and`, and jit compile it.
+
+```python
+@numba.njit
+def bitset_and(arrays):
+    result = arrays[0].copy()
+    for i in range(1, len(arrays)):
+        result &= arrays[i]
+    return result
+```
 
 ```
 Benchmark #16: numba also on bitset_and
