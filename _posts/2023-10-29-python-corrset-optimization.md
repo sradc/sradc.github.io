@@ -24,7 +24,7 @@ The times in this post are comparable to the times reported in the original arti
 
 ### Python Baseline
 
-Here is a replication of the baseline, unoptimized Python code, from the [article]((https://willcrichton.net/notes/k-corrset/)).
+Here is a replication of the baseline, unoptimized Python code, from the [article](https://willcrichton.net/notes/k-corrset/).
 
 ```python
 from itertools import combinations
