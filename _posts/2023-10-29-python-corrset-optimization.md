@@ -696,4 +696,4 @@ Would I recommend one approach over the other? No, it depends on the situation.
 
 #### Notes
 
-The full code is [here](https://github.com/sradc/corrset-benchmark-fork/tree/main/python_optimization).
+The full code is [here, on GitHub](https://github.com/sradc/corrset-benchmark-fork/tree/main/python_optimization).
