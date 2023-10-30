@@ -2,7 +2,7 @@
 layout: post
 title:  "Analyzing Data 170,000x Faster with Python"
 date: 2023-10-29 00:00:00 +0000
-date_edited: 2023-10-29 00:00:00 +0000
+date_edited: 2023-10-30 00:00:00 +0000
 categories:
 comments: true
 ---
@@ -625,7 +625,7 @@ Ok, nice we are 36,000 times faster than the original code.
 
 ### Optimization 13 - Numba, inline with accumulation instead of arrays
 
-Where do we go from here?... Well, in the code above there's still a fair amount of putting values into arrays, and then passing them around. Since we are are taking the effort to optimize this code, we can look at the way corrcoef is computed, and realise that we don't need to build up the arrays `answered_all`, and `user_grand_total`, we can instead accumulate the values, as we loop.
+Where do we go from here?... Well, in the code above there's still a fair amount of putting values into arrays, and then passing them around. Since we are are making the effort to optimize this code, we can look at the way corrcoef is computed, and realise that we don't need to build up the arrays `answered_all`, and `user_grand_total`, we can instead accumulate the values, as we loop.
 
 And here's the code (we've also enabled some compiler optimizations, like disabling `boundschecking` of arrays, and enabling `fastmath`).
 
@@ -688,7 +688,7 @@ Nice, we've got to 170,000x the speed of the Python baseline.
 
 ### Conclusion
 
-We've been able to get most of the things that made the optimized Rust code fast, notably, bitsets, SIMD, and loop-level parallelism, thanks to Numba and NumPy. First we made the original Python code considerably faster, with a few helper functions JIT compiled, but in the end we JITed the whole thing, and optimized the code for that. We took a trial and improvement approach, using profiling to focus our efforts on the slowest lines of code. We showed that we can use Numba to gradually mix JIT compiled code into our Python codebase. We can drop this code into our existing Python codebase immediately. However, we didn't get to the 180,000x speed up of the optimized Rust code, and we rolled our own correlation and bitsets implementation, whereas the Rust code was able to use libraries for these, while remaining fast.
+We've been able to get most of the things that made the optimized Rust code fast, notably, bitsets, SIMD, and loop-level parallelism, thanks to Numba and NumPy. First, we made the original Python code considerably faster, with a few helper functions JIT compiled, but in the end we JITed the whole thing, and optimized the code for that. We took a trial and improvement approach, using profiling to focus our efforts on the slowest lines of code. We showed that we can use Numba to gradually mix JIT compiled code into our Python codebase. We can drop this code into our existing Python codebase immediately. However, we didn't get to the 180,000x speed up of the optimized Rust code, and we rolled our own correlation and bitsets implementation, whereas the Rust code was able to use libraries for these, while remaining fast.
 
 This was a fun exercise, that hopefully shows off some useful tools in the Python ecosystem.
 
