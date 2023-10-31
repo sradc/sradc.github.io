@@ -2,7 +2,7 @@
 layout: post
 title:  "Analyzing Data 170,000x Faster with Python"
 date: 2023-10-29 00:00:00 +0000
-date_edited: 2023-10-30 00:00:00 +0000
+date_edited: 2023-10-31 00:00:00 +0000
 categories:
 comments: true
 ---
@@ -387,7 +387,7 @@ Avg time per iteration:  8.5 μs
 Speedup over baseline:   4142.0x
 ```
 
-We see that the Numba code isn't much faster than the Python code, with `parallel=False`, but when we turn on the parallelism, we start making use of all of all of our CPU cores (8 on the machine running the benchmarks), which gives a good speed multiplier.
+We see that with `parallel=False` the Numba code is slightly slower than the previous Python code, but when we turn on the parallelism, we start making use of all of our CPU cores (10 on the machine running the benchmarks), which gives a good speed multiplier.
 
 However, we lose the ability to use [line_profiler](https://github.com/pyutils/line_profiler), on the JIT compiled code; (we might want to start looking at the generated LLVM IR / assembly).
 
