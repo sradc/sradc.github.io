@@ -2,7 +2,7 @@
 layout: post
 title:  "Analyzing Data 170,000x Faster with Python"
 date: 2023-10-29 00:00:00 +0000
-date_edited: 2023-10-31 00:00:00 +0000
+date_edited: 2023-11-14 00:00:00 +0000
 categories:
 comments: true
 ---
@@ -238,9 +238,6 @@ Speedup over baseline:   168.5x
 We can see that the set operation above is still the slowest line. Instead of using sets of ints, we switch to using a `np.bool_` array of users, and use `np.logical_and.reduce` to find the users that answered all of the questions in `qs`. (Note that `np.bool_` uses a whole byte for each element, but `np.logical_and.reduce` is still pretty fast.) This gives a signicant speedup:
 
 ```
-Benchmark #6: NumPy bool_ array to identify users who answered qs
-Using 1000 iterations...
-
 Avg time per iteration:  75 μs
 Speedup over baseline:   466.7x
 
@@ -461,7 +458,7 @@ Speedup over baseline:   64.2x
 It looks like we've regressed somewhat, with the `bitset_to_list` operation taking up a lot of time.
 
 
-### Optimization 9 - Numba on _bitset_to_list_
+### Optimization 10 - Numba on _bitset_to_list_
 
 Let's convert `bitset_to_list` into compiled code. To do this we can add a Numba decorator:
 
@@ -506,7 +503,7 @@ Speedup over baseline:   1801.2x
 
 We've got an 1,800x speed up over the original code. Recall that optimization 7, before Numba was introduced, got 814x. (Optimization 8 got 4142x, but that was with `parallel=True` on the inner loop, so it's not comparible to the above.)
 
-### Optimization 10 - Numba on _corrcoef_
+### Optimization 11 - Numba on _corrcoef_
 
 The corrcoef line is again standing out as slow above. Let's use `corrcoef` decorated with Numba.
 
@@ -550,7 +547,7 @@ Speedup over baseline:   3218.9x
 
 Nice, another big speedup.
 
-### Optimization 11 - Numba on _bitset_and_
+### Optimization 12 - Numba on _bitset_and_
 
 Instead of using `np.bitwise_and.reduce`, we introduce `bitwise_and`, and jit compile it.
 
@@ -588,7 +585,7 @@ Speedup over baseline:   3956.7x
 ```
 
 
-### Optimization 12 - Numba on the whole function
+### Optimization 13 - Numba on the whole function
 
 The above is now considerably faster than the original code, with the computation spread fairly evenly out among a few lines in the loop. In fact, it looks like the slowest line is carrying out NumPy indexing, which is already pretty fast. So, let's compile the whole function with Numba.
 
@@ -623,7 +620,7 @@ Speedup over baseline:   36721.4x
 
 Ok, nice we are 36,000 times faster than the original code. 
 
-### Optimization 13 - Numba, inline with accumulation instead of arrays
+### Optimization 14 - Numba, inline with accumulation instead of arrays
 
 Where do we go from here?... Well, in the code above there's still a fair amount of putting values into arrays, and then passing them around. Since we are are making the effort to optimize this code, we can look at the way corrcoef is computed, and realise that we don't need to build up the arrays `answered_all`, and `user_grand_total`, we can instead accumulate the values, as we loop.
 
