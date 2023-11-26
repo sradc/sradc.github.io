@@ -9,8 +9,7 @@ comments: true
 
 If you are using Firefox or Chrome, on Desktop, try out the demo [here](https://gridnotes.io/v1/)!
 
-
-## Features
+## Features
 
 Typing on an infinite grid.
 
@@ -21,20 +20,34 @@ Typing on an infinite grid.
 />
 </p>
 
-<!-- Warping.
+Teleportation using written coordinates, (enabling warp loops).
+ 
+<p align="center">
+<img 
+    src="/assets/posts/gridnotes/teleport.gif"
+    alt="Image showing teleporting using coordinates"
+/>
+</p>
 
 
-(That's a warp loop).
+Opening links.
 
+<p align="center">
+<img 
+    src="/assets/posts/gridnotes/link.gif"
+    alt="Image showing using links"
+/>
+</p>
 
-Stores your text locally, in your browser.
-
+Plus a few more bonus features, e.g. newline behaviour, alt + backspace deletion, etc.
 
 ## Notes
 
-I made most of this demo in January of this year, and recently realised I should just ship.
+Text is stored locally, in the browser.
+
+I made most of this demo in January of this year, and realised I should just ship.
 
 ## Inspirations
 
 - [Orca](https://wiki.xxiivv.com/site/orca.html) <- a 2-dimensional programming language for making music
-- Infinite 2D canvas tools such as Excalidraw, Obsidian canvas, Miro, Lucidchart, Freeform etc.  -->
+- Infinite 2D canvas tools such as Excalidraw, Obsidian canvas, Miro, Lucidchart, Freeform etc.
