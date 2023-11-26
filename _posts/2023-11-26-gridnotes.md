@@ -47,8 +47,6 @@ Plus a few more bonus features, e.g. newline behaviour, alt + backspace deletion
 
 Text is stored locally, in the browser.
 
-I made most of this demo in January of this year, but haven't had much chance to work on it, so thought let's "just ship".
-
 ## Inspirations
 
 - [Orca](https://wiki.xxiivv.com/site/orca.html) <- a 2-dimensional programming language for making music
