@@ -7,7 +7,9 @@ categories:
 comments: true
 ---
 
-If you are using Firefox or Chrome, on Desktop, try out the demo [here](https://gridnotes.io/v1/)!
+Gridnotes (working title) is an infinite 2D text editor.
+
+If you are using Firefox or Chrome, on Desktop, try out the demo: [here](https://gridnotes.io/v1/)
 
 ## Features
 
@@ -45,9 +47,13 @@ Plus a few more bonus features, e.g. newline behaviour, alt + backspace deletion
 
 Text is stored locally, in the browser.
 
-I made most of this demo in January of this year, and realised I should just ship.
+I made most of this demo in January of this year, and realised I should just ship, and start getting feedback.
 
 ## Inspirations
 
 - [Orca](https://wiki.xxiivv.com/site/orca.html) <- a 2-dimensional programming language for making music
 - Infinite 2D canvas tools such as Excalidraw, Obsidian canvas, Miro, Lucidchart, Freeform etc.
+
+--- 
+
+Edit: seen that the name is already in use
