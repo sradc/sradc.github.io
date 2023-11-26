@@ -49,7 +49,7 @@ Text is stored locally, in the browser.
 
 ## Inspirations
 
-- [Orca](https://wiki.xxiivv.com/site/orca.html) <- a 2-dimensional programming language for making music
+- [Orca](https://wiki.xxiivv.com/site/orca.html) <- a two-dimensional programming language for making music
 - Infinite 2D canvas tools such as Excalidraw, Obsidian canvas, Miro, Lucidchart, Freeform etc.
 
 --- 
