@@ -47,7 +47,7 @@ Plus a few more bonus features, e.g. newline behaviour, alt + backspace deletion
 
 Text is stored locally, in the browser.
 
-I made most of this demo in January of this year, and realised I should just ship, and start getting feedback.
+I made most of this demo in January of this year, but haven't had much chance to work on it, so thought let's "just ship".
 
 ## Inspirations
 
