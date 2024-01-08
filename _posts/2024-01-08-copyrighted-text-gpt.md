@@ -24,7 +24,7 @@ but the copyright detection successfully prevented the model from returning copy
     />
 </p>
 
-The copyright detection was also active when using the model through the OpenAI API.
+The copyright detection was also active when using the model through the OpenAI API:
 
 #### Example 2
 
