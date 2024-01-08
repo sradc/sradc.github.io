@@ -133,7 +133,7 @@ You can make the model think it has said something that it hasn't actually said.
 This is due to OpenAI's stateless API, with the end user maintaining the chat history themselves... 
 This gives the end user the power to "doctor" chat history, possibly tricking the model...
 
-I did try this method on it's own, but the copyright detection still worked, until I switched to the JSON api. Failed example below.
+I did try this method on its own, but the copyright detection still worked, until I switched to the JSON api. Failed example below.
 
 #### Example 5
 
