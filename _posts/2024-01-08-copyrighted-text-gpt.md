@@ -2,14 +2,14 @@
 layout: post
 title: "Extracting copyrighted text from GPT"
 date: 2024-01-08 00:00:00 +0000
-date_edited:
+date_edited: 2024-01-08 00:00:00 +0000
 categories:
 comments: true
 ---
 
 It seems that ChatGPT has memorised copyrighted text,
 but it can be difficult to get the model to output this text,
-because OpenAI have implemented some kind of copyright detection.
+because of some kind of copyright detection that OpenAI have implemented.
 
 I made a few different attempts in the web interface, with ChatGPT 3.5,
 but the copyright detection successfully prevented the model from returning copyrighted text,
