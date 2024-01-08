@@ -7,8 +7,8 @@ categories:
 comments: true
 ---
 
-Although it seems that ChatGPT has memorised copyrighted text, 
-it can be difficult to get the model to output said text, 
+It seems that ChatGPT has memorised copyrighted text,
+but it can be difficult to get the model to output this text,
 because OpenAI have implemented some kind of copyright detection.
 
 I made a few different attempts in the web interface, with ChatGPT 3.5,
@@ -59,7 +59,7 @@ Output:
 
 ### The workaround
 
-OpenAI's copyright detection doesn't seem to work so well, when using the JSON-mode, available through the API; and I have been able to get the model to output copyrighted text when using this mode. See the following two successful attempts:
+OpenAI's copyright detection doesn't seem to work so well, when using JSON-mode, available through the API; and I have been able to get the model to output copyrighted text when using this mode. See the following two successful attempts:
 
 #### Example 3
 
@@ -128,7 +128,10 @@ print(chat(messages).content)
 
 ### Doctoring history
 
-Noting that the above also contains a trick, that's possible through the API, but harder through the GUI... You can trick the model into thinking it has said something, that it hasn't actually said. This is due to the fact that the OpenAI is stateless, with the end user maintaining the chat history themselves... This gives the end user the power to "doctor" that chat history, possibly tricking the model...
+Noting that the above also contains a trick, which is possible through the API, but harder through the GUI... 
+You can make the model think it has said something that it hasn't actually said. 
+This is due to OpenAI's stateless API, with the end user maintaining the chat history themselves... 
+This gives the end user the power to "doctor" chat history, possibly tricking the model...
 
 I did try this method on it's own, but the copyright detection still worked, until I switched to the JSON api. Failed example below.
 
