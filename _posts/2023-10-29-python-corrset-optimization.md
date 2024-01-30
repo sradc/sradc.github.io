@@ -2,7 +2,7 @@
 layout: post
 title:  "Analyzing Data 170,000x Faster with Python"
 date: 2023-10-29 00:00:00 +0000
-date_edited: 2023-11-14 00:00:00 +0000
+date_edited: 2024-01-30 00:00:00 +0000
 categories:
 comments: true
 ---
@@ -116,9 +116,20 @@ This lends itself to the following workflow for optimizing the code:
 - Try make to the slower lines faster
 - Repeat
 
-
 If there are just a few lines taking up the majority of the time, we know what to focus on, and from the above we see that there's a particularly slow line, taking up ~70% of the time.
 
+However, there is another vital step to include:
+
+- _Test the output for correctness_
+- Run the profiler
+- Identify the slowest lines
+- Try make to the slower lines faster
+- Repeat
+
+The tests help one to experiment, 
+to try out different methods, libraries, etc. 
+while knowing that any accidental changes
+to what is being computed will be caught.
 
 ### Optimization 1 - dictionary of sets of users who answered questions, _users_who_answered_q_
 
