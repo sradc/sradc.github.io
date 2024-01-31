@@ -5,6 +5,7 @@ date: 2023-11-26 00:00:00 +0000
 date_edited: 2023-11-26 00:00:00 +0000
 categories:
 comments: true
+nolink: true
 ---
 
 Gridnotes (working title) is an infinite 2D text editor.

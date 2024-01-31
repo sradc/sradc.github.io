@@ -5,6 +5,7 @@ date: 2024-01-08 00:00:00 +0000
 date_edited: 2024-01-08 00:00:00 +0000
 categories:
 comments: true
+nolink: true
 ---
 
 It seems that ChatGPT has memorised copyrighted text,
