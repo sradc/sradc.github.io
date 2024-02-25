@@ -7,10 +7,6 @@
   <link rel="shortcut icon" type="image/png" href="{{ "/assets/favicon.png" | relative_url }}">
   {%- feed_meta -%}
 
-  <!-- {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%} -->
-
   {%- if jekyll.environment == 'production' -%}
   <script defer>
     // custom analytics for sidsite.com, (testing this as an alternative to other services)
@@ -33,7 +29,5 @@
       }));
     })();
   </script>
-
-  <script defer data-domain="sidsite.com" src="https://plausible.io/js/script.js"></script>
   {%- endif -%}
 </head>
