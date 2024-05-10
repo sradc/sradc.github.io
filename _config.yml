@@ -30,6 +30,9 @@ github_username:  sradc
 google_analytics: UA-155353623-1
 rss: RSS
 
+markdown: kramdown
+kramdown:
+  parse_block_html: true
 
 collections:
   posts:
