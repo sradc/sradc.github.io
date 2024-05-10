@@ -6,6 +6,8 @@ date_edited: 2021-05-31 00:00:00 +0000
 categories:
 comments: true
 nolink: false
+kramdown:
+  parse_block_html: false
 ---
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -59,6 +61,7 @@ We can use a matrix for this ($k$ is incremented column-wise, and $n$ row-wise):
 <div style=" width: 100vw;
   position: relative;
   left: calc(-50vw + 50%);">
+{% raw %}
 $$ [y_0... y_{N-1}] = [x_0... x_{N-1}]
 \begin{bmatrix}
     \exp(0)     & \exp(0)                     & \exp(0)                      & \dots  & \exp(0) \\
@@ -68,7 +71,8 @@ $$ [y_0... y_{N-1}] = [x_0... x_{N-1}]
     \vdots      & \vdots                      & \vdots                       &        & \vdots \\
     \exp(0)     & \exp(-i\frac{2\pi}{N}(N-1)) & \exp(-i\frac{2\pi2}{N}(N-1)) & \dots  & \exp(-i\frac{2\pi(N-1)}{N}(N-1))
 \end{bmatrix}
-$$ 
+$$
+{% endraw %}
 </div>
 
 
@@ -106,6 +110,7 @@ and the imaginary part (the $sin$ term) for the right half.
 <div style=" width: 100vw;
   position: relative;
   left: calc(-50vw + 50%);">
+{% raw %}
 $$ \hat{\boldsymbol{y}} = [x_0 ... x_{N-1}]
 \begin{bmatrix}
     \cos(0)     & \cos(0)                   & \dots  & \cos(0) & -\sin(0) & -\sin(0) & \dots & -\sin(0)\\
@@ -116,6 +121,7 @@ $$ \hat{\boldsymbol{y}} = [x_0 ... x_{N-1}]
     \cos(0)     & \cos(\frac{2\pi}{N}(N-1)) & \dots  & \cos(\frac{2\pi(N-1)}{N}(N-1)) & -\sin(0)     & -\sin(\frac{2\pi}{N}(N-1)) & \dots & -\sin(\frac{2\pi(N-1)}{N}(N-1))
 \end{bmatrix}
 $$
+{% endraw %}
 </div>
 
 
