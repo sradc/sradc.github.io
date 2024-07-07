@@ -110,7 +110,7 @@ and a classifier head, which classifies each token/grid cell as dead or alive in
 
 This section presents code for the model,
 then a diagram of the model, 
-and finally a mode detailed description of the model.
+and finally a more detailed description of the model.
 
 ### Model code
 
