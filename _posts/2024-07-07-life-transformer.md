@@ -222,6 +222,8 @@ We found that training it on just the first step after randomly initialising a g
 wasn't enough for it to pass the 100 Life games for 100 steps test,
 and so randomly introduced pairs with an extra step taken.
 
+The code is [here](https://github.com/sradc/training-a-simple-transformer-on-conways-game-of-life), on GitHub.
+
 ## Appendix
 
 ### The rules of Life
