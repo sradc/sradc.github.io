@@ -2,7 +2,7 @@
 layout: post
 title: "Training a Simple Transformer Neural Net on Conway's Game of Life"
 date: 2024-07-07 00:00:00 +0000
-date_edited:
+date_edited: 2024-07-07 00:00:00 +0000
 categories:
 comments: true
 thumbnail: /assets/posts/life-transformer/attention_matrix_training.gif
@@ -83,6 +83,7 @@ by randomly initialising grids and running the Game of Life on them.
 The following plot shows some examples, 
 where each row represents a pair.
 
+<!-- TODO: white background -->
 <p align="center">
 <img 
     src="/assets/posts/life-transformer/training_examples.png"
@@ -248,3 +249,21 @@ Life - https://arxiv.org/pdf/2009.01398.pdf
 - Vaswani et al - 2017 - Attention Is All You Need - https://arxiv.org/abs/1706.03762 
 
 - Conway's Game of Life - https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
+
+
+
+<!-- Attempt to fix mathjax not working for details... -->
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('details').forEach(function(details) {
+        details.addEventListener('toggle', function(event) {
+            if (details.open) {
+                MathJax.typesetPromise([details]).catch(function(err) {
+                    console.log('Error typesetting MathJax:', err.message);
+                });
+            }
+        });
+    });
+});
+</script>
