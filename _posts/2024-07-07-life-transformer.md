@@ -8,6 +8,8 @@ comments: true
 thumbnail: /assets/posts/life-transformer/attention_matrix_training.gif
 ---
 
+{%- include mathjax.html -%}
+
 We create a simplified transformer neural network,
 and train it compute Conway's Game of Life
 just by showing it examples of the game.
@@ -106,48 +108,11 @@ Our model uses embeddings to represent a Life grid as a set of tokens, with one 
 These tokens then go through single-head attention, a hidden layer, 
 and a classifier head, which classifies each token/grid cell as dead or alive in the next step.
 
-### Detailed model description
-
-#### Input tokens
-
-The model represents each grid cell of the Game of Life as a token, (a vector of size `ndim`).
-A given model instance will be trained on a fixed size Life grid.
-The model will construct its *input tokens* by adding *positional embeddings* to *cell state embeddings*.
-There will be one positional embedding for each grid cell.
-There will be two cell state embeddings — one to represent that a cell is alive, and one to represent that a cell is dead.
-The embeddings will be randomly initialised, and then learned through gradient descent.
-
-#### Single-head attention
-
-From the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762), single head attention will compute a weighted sum of a projection of the input tokens, for each token, as determined by a square *attention matrix* that is computed for each `before_grid`.
-
-If we call the input tokens, $T$, then we can write single-head attention as, $x = softmax( \frac{ (T W_q) (T W_k )^T}{√d_k} ) (T W_v)$, where $W_q$, $W_k$ and $W_v$ are weight matrices that will be randomly initialised and then learned through gradient descent. The formula is more commonly written as $x = softmax( \frac{QK^T}{√d_k} )V$, where $Q = T W_q$, $K = T W_k$ and $V = T W_v$. We refer to $Q$, $K$ and $V$ as linear projections of the input tokens. We can break the formula up into an attention matrix, $A = softmax( \frac{QK^T}{√d_k})$, and the attention output, $x = AV$. The attention output will be a set of tokens, of the same shape as the input tokens, where each output token is a weighted sum of a linear projection of the input tokens, (i.e. a weighted sum of all the rows in $V$). The factor, $\frac{1}{√d_k}$, is a constant for a given model instance, (called `ndim` in the code below). The softmax is applied to each row of the attention matrix, making the values positive and each row sum to 1, it also tends to make the larger values in each row larger relative to the smaller values in the row.
-
-#### Hidden layer
-
-This is a single neural network layer, that operates on each token individually. It uses a weight matrix that will be randomly initialised and learned through gradient descent. The hidden layer and the single-head attention layer that precedes it can together be referred to as an "attention block"; where transformers typically have multiple attention blocks in series.
-
-#### Classifier layer
-
-This will take each of the tokens above, (recall there's one for each grid cell), and decide whether it should be dead or alive in the next Life step. It uses a weight matrix that will be randomly initialised and learned through gradient descent.
-
-
-### Detailed model diagram
-The model in the diagram processes 2-by-2 Life grids, which means 4 tokens in total per grid. Blue text indicates parameters that are learned via gradient descent. The arrays are labelled with their shape, (with the batch dimension omitted).
-
-<figure class="image">
-<p align="center">
-<img 
-    src="/assets/posts/life-transformer/simple_transformer_detailed.drawio.png"
-    alt="Detailed diagram of SimpleTransformer"
-    width=500
-/>
-</p>
-</figure>
+This section presents code for the model,
+then a diagram of the model, 
+and finally a mode detailed description of the model.
 
 ### Model code
-
-Here's the code for the model:
 
 ```python
 class SingleAttentionNet(torch.nn.Module):
@@ -191,6 +156,44 @@ class SingleAttentionNet(torch.nn.Module):
 
         return x, attention_matrix
 ```
+
+### Model diagram
+The model in the diagram processes 2-by-2 Life grids, which means 4 tokens in total per grid. Blue text indicates parameters that are learned via gradient descent. The arrays are labelled with their shape, (with the batch dimension omitted).
+
+<figure class="image">
+<p align="center">
+<img 
+    src="/assets/posts/life-transformer/simple_transformer_detailed.drawio.png"
+    alt="Detailed diagram of SimpleTransformer"
+    width=500
+/>
+</p>
+</figure>
+
+### Detailed model description
+
+#### Input tokens
+
+The model represents each grid cell of the Game of Life as a token, (a vector of size `ndim`).
+A given model instance will be trained on a fixed size Life grid.
+The model will construct its *input tokens* by adding *positional embeddings* to *cell state embeddings*.
+There will be one positional embedding for each grid cell.
+There will be two cell state embeddings — one to represent that a cell is alive, and one to represent that a cell is dead.
+The embeddings will be randomly initialised, and then learned through gradient descent.
+
+#### Single-head attention
+
+From the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762), single head attention will compute a weighted sum of a projection of the input tokens, for each token, as determined by a square *attention matrix* that is computed for each `before_grid`.
+
+If we call the input tokens, $T$, then we can write single-head attention as, $x = softmax( \frac{ (T W_q) (T W_k )^T}{√d_k} ) (T W_v)$, where $W_q$, $W_k$ and $W_v$ are weight matrices that will be randomly initialised and then learned through gradient descent. The formula is more commonly written as $x = softmax( \frac{QK^T}{√d_k} )V$, where $Q = T W_q$, $K = T W_k$ and $V = T W_v$. We refer to $Q$, $K$ and $V$ as linear projections of the input tokens. We can break the formula up into an attention matrix, $A = softmax( \frac{QK^T}{√d_k})$, and the attention output, $x = AV$. The attention output will be a set of tokens, of the same shape as the input tokens, where each output token is a weighted sum of a linear projection of the input tokens, (i.e. a weighted sum of all the rows in $V$). The factor, $\frac{1}{√d_k}$, is a constant for a given model instance, (called `ndim` in the code below). The softmax is applied to each row of the attention matrix, making the values positive and each row sum to 1, it also tends to make the larger values in each row larger relative to the smaller values in the row.
+
+#### Hidden layer
+
+This is a single neural network layer, that operates on each token individually. It uses a weight matrix that will be randomly initialised and learned through gradient descent. The hidden layer and the single-head attention layer that precedes it can together be referred to as an "attention block"; where transformers typically have multiple attention blocks in series.
+
+#### Classifier layer
+
+This will take each of the tokens above, (recall there's one for each grid cell), and decide whether it should be dead or alive in the next Life step. It uses a weight matrix that will be randomly initialised and learned through gradient descent.
 
 ## Training
 
