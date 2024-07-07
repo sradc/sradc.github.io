@@ -254,3 +254,17 @@ Life - https://arxiv.org/pdf/2009.01398.pdf
 - Vaswani et al - 2017 - Attention Is All You Need - https://arxiv.org/abs/1706.03762 
 
 - Conway's Game of Life - https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
+
+## Citation:
+
+```
+@misc{radcliffe_life_transformer_2024,
+  title={Training a Simple Transformer Neural Net on Conway's Game of Life},
+  url={https://sidsite.com/posts/life-transformer/},
+  howpublished={Main page: \url{https://sidsite.com/posts/life-transformer/}, GitHub repository: \url{https://github.com/sradc/training-a-simple-transformer-on-conways-game-of-life}},
+  author={Radclffe, Sidney},
+  year={2024},
+  month={July}
+}
+```
