@@ -21,7 +21,6 @@ with single-head attention.
 Before we get into the details, here's a Life game, 
 computed by a SingleAttentionNet model.
 
-<!-- TODO: revert image paths to /assets rather than ../assets -->
 <p align="center">
 <img 
     src="/assets/posts/life-transformer/life_grid_computed_by_transformer.gif"
@@ -85,7 +84,6 @@ by randomly initialising grids and running the Game of Life on them.
 The following plot shows some examples, 
 where each row represents a pair.
 
-<!-- TODO: white background -->
 <p align="center">
 <img 
     src="/assets/posts/life-transformer/training_examples.png"
