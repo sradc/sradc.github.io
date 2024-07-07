@@ -8,6 +8,8 @@ comments: true
 thumbnail: /assets/posts/life-transformer/attention_matrix_training.gif
 ---
 
+<!-- TODO: set up code and link to it -->
+
 {%- include mathjax.html -%}
 
 We create a simplified transformer neural network,
