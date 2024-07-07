@@ -200,6 +200,7 @@ This will take each of the tokens above, (recall there's one for each grid cell)
 On a GPU, training the model takes anywhere from a couple of minutes, 
 to 10 minutes, or a seemingly indefinite amount of time,
 depending on the seed, and other training hyperparameters.
+The largest grid size we successfully trained was 16x16.
 
 <p align="center">
 <img 
@@ -207,6 +208,12 @@ depending on the seed, and other training hyperparameters.
     alt="Life game computed by a SingleAttentionNet model"
 />
 </p>
+
+## Notes
+
+If we replaced the attention layer of the model with a manually computed Neighbour Attention matrix,
+the model learned its task far quicker, and generalised to arbitrary grid sizes.
+We found that the same was true for replacing the layer with a 3-by-3 average pool.
 
 ## Appendix
 
