@@ -93,7 +93,7 @@ where each row represents a pair.
 />
 </p>
 
-And here is a simplified version of the training loop we will use:
+And here is a simplified version of the training loop we use:
 
 ```python
 for life_grid, next_life_grid in life_data_generator():
