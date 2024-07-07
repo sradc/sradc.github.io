@@ -106,11 +106,7 @@ Our model uses embeddings to represent a Life grid as a set of tokens, with one 
 These tokens then go through single-head attention, a hidden layer, 
 and a classifier head, which classifies each token/grid cell as dead or alive in the next step.
 
-
-<details style="border: 1px solid gray; border-radius: 4px; padding: 4px;">
-<summary style="font-weight: bold; cursor: pointer;">
-Detailed model description
-</summary>
+### Detailed model description
 
 #### Input tokens
 
@@ -134,15 +130,11 @@ This is a single neural network layer, that operates on each token individually.
 #### Classifier layer
 
 This will take each of the tokens above, (recall there's one for each grid cell), and decide whether it should be dead or alive in the next Life step. It uses a weight matrix that will be randomly initialised and learned through gradient descent.
-</details>
 
-<br>
 
-<details style="border: 1px solid gray; border-radius: 4px; padding: 4px;">
-<summary style="font-weight: bold; cursor: pointer;">
-Detailed model diagram
-</summary>
+### Detailed model diagram
 The model in the diagram processes 2-by-2 Life grids, which means 4 tokens in total per grid. Blue text indicates parameters that are learned via gradient descent. The arrays are labelled with their shape, (with the batch dimension omitted).
+
 <figure class="image">
 <p align="center">
 <img 
@@ -152,10 +144,8 @@ The model in the diagram processes 2-by-2 Life grids, which means 4 tokens in to
 />
 </p>
 </figure>
-</details>
 
-<br>
-
+### Model code
 
 Here's the code for the model:
 
@@ -200,7 +190,6 @@ class SingleAttentionNet(torch.nn.Module):
         x = x @ self.W_c  # [b, num_grid_cells, 1]
 
         return x, attention_matrix
-
 ```
 
 ## Training
@@ -238,7 +227,6 @@ These rules are shown in the following plot.
 />
 </p>
 
-
 ## References:
 
 - Springer et al - 2020 - It’s Hard For Neural Networks to Learn the Game of
@@ -249,21 +237,3 @@ Life - https://arxiv.org/pdf/2009.01398.pdf
 - Vaswani et al - 2017 - Attention Is All You Need - https://arxiv.org/abs/1706.03762 
 
 - Conway's Game of Life - https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
-
-
-
-
-<!-- Attempt to fix mathjax not working for details... -->
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('details').forEach(function(details) {
-        details.addEventListener('toggle', function(event) {
-            if (details.open) {
-                MathJax.typesetPromise([details]).catch(function(err) {
-                    console.log('Error typesetting MathJax:', err.message);
-                });
-            }
-        });
-    });
-});
-</script>
