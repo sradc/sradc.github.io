@@ -200,7 +200,7 @@ This will take each of the tokens above, (recall there's one for each grid cell)
 On a GPU, training the model takes anywhere from a couple of minutes, 
 to 10 minutes, or a seemingly indefinite amount of time,
 depending on the seed, and other training hyperparameters.
-The largest grid size we successfully trained was 16x16.
+The largest grid size we successfully trained on was 16x16.
 
 <p align="center">
 <img 
@@ -214,6 +214,13 @@ The largest grid size we successfully trained was 16x16.
 If we replaced the attention layer of the model with a manually computed Neighbour Attention matrix,
 the model learned its task far quicker, and generalised to arbitrary grid sizes.
 We found that the same was true for replacing the layer with a 3-by-3 average pool.
+
+We checked that the model worked by looking for `1024` batches with 100% accuracy, 
+and then testing the model on 100 Life games for 100 steps each.
+
+We found that training it on just the first step after randomly initialising a grid 
+wasn't enough for it to pass the 100 Life games for 100 steps test,
+and so randomly introduced pairs with an extra step taken.
 
 ## Appendix
 
