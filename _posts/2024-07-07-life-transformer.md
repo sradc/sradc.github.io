@@ -43,9 +43,9 @@ And the following plot shows examples of the SingleAttentionNet model's attentio
 </p>
 
 The pattern that emerges is the model learning to attend to just the 8 neighbours of each cell.
-The attention of the model becomes nearly equivalent to a 3x3 average pool,
+The attention of the model becomes near-equivalent to a 3x3 average pool,
 as is used in convolutional neural networks,
-although unlike an average pool,
+except unlike an average pool,
 it excludes the middle cell from the average.
 It is vastly more efficient to directly use an average pool, 
 rather than an attention layer, 
