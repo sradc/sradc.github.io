@@ -8,13 +8,15 @@ comments: true
 thumbnail: /assets/posts/life-transformer/attention_matrix_training.gif
 ---
 
-<!-- TODO: set up code and link to it -->
-
 {%- include mathjax.html -%}
 
 We create a simplified transformer neural network,
 and train it compute Conway's Game of Life
 from examples of the game.
+
+This exercise presents pretty much the simplest form of a transformer, 
+and Life is an easy source of data for it.
+(Running the Game of Life on transformers is obviously not of practical use.)
 
 We call the model SingleAttentionNet,
 because it uses just a single attention block, 
