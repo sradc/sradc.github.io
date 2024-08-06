@@ -2,7 +2,7 @@
 layout: post
 title: "Training a Simple Transformer Neural Net on Conway's Game of Life"
 date: 2024-07-07 00:00:00 +0000
-date_edited: 2024-07-07 00:00:00 +0000
+date_edited: 2024-08-06 00:00:00 +0000
 categories:
 comments: true
 thumbnail: /assets/posts/life-transformer/attention_matrix_training.gif
@@ -14,13 +14,15 @@ We create a simplified transformer neural network,
 and train it compute Conway's Game of Life
 from examples of the game.
 
+> Q: Wouldn't convolution be better here? The Game of Life is basically a single 3x3 kernel anyway
+
+Answer: CNNs would be smaller, more efficient to run, generalise to arbitrary grid sizes, and easier to train, (find works on CNNs and Life in the references below). This was an exercise in seeing whether a transformer with single-head attention could solve Life, and how it would solve it — the finding is that it approximates a CNN, with 1x1 convolutions and a 3-by-3 average pool approximated by the attention mechanism.
+
 This exercise presents pretty much the simplest form of a transformer, 
 and Life is an easy source of data for it.
-(Running the Game of Life on transformers is obviously not of practical use.)
 
 We call the model SingleAttentionNet,
-because it uses just a single attention block, 
-with single-head attention.
+due to its single attention block, with single-head attention.
 
 Before we get into the details, here's a Life game, 
 computed by a SingleAttentionNet model.
