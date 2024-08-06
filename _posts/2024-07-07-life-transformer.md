@@ -16,7 +16,9 @@ from examples of the game.
 
 > Q: Wouldn't convolution be better here? The Game of Life is basically a single 3x3 kernel anyway
 
-Answer: CNNs would be smaller, more efficient to run, generalise to arbitrary grid sizes, and easier to train, (find works on CNNs and Life in the references below). This was an exercise in seeing whether a transformer with single-head attention could solve Life, and how it would solve it — the finding is that it approximates a CNN, with 1x1 convolutions and a 3-by-3 average pool approximated by the attention mechanism.
+Answer: CNNs would be smaller, more efficient to run, generalise to arbitrary grid sizes, and easier to train, (see the works on CNNs and Life in the references below). 
+(As noted in [It’s Hard For Neural Networks to Learn the Game of Life](https://arxiv.org/pdf/2009.01398.pdf), Life can be hand written as a tiny CNN with a single layer.)
+This was an exercise in seeing whether a transformer with single-head attention could solve Life, and how it would solve it — the finding is that it approximates a CNN, with 1x1 convolutions and a 3-by-3 average pool approximated by the attention mechanism.
 
 This exercise presents pretty much the simplest form of a transformer, 
 and Life is an easy source of data for it.
@@ -253,13 +255,13 @@ These rules are shown in the following plot.
 ## References:
 
 - Springer et al - 2020 - It’s Hard For Neural Networks to Learn the Game of
-Life - https://arxiv.org/pdf/2009.01398.pdf
+Life - [https://arxiv.org/pdf/2009.01398.pdf](https://arxiv.org/pdf/2009.01398.pdf)
 
-- McGuigan - 2021 - Its Easy for Neural Networks To Learn Game of Life - https://www.kaggle.com/code/jamesmcguigan/its-easy-for-neural-networks-to-learn-game-of-life
+- McGuigan - 2021 - Its Easy for Neural Networks To Learn Game of Life - [https://www.kaggle.com/code/jamesmcguigan/its-easy-for-neural-networks-to-learn-game-of-life](https://www.kaggle.com/code/jamesmcguigan/its-easy-for-neural-networks-to-learn-game-of-life)
 
-- Vaswani et al - 2017 - Attention Is All You Need - https://arxiv.org/abs/1706.03762 
+- Vaswani et al - 2017 - Attention Is All You Need - [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762) 
 
-- Conway's Game of Life - https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+- Conway's Game of Life - [https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 
 ## Citation:
