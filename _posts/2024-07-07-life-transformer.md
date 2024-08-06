@@ -230,28 +230,6 @@ and so randomly introduced pairs with an extra step taken.
 
 The code is [here](https://github.com/sradc/training-a-simple-transformer-on-conways-game-of-life), on GitHub.
 
-## Appendix
-
-### The rules of Life
-
-Life takes place on a 2D grid with cells that are either dead or alive, (represented by 0 or 1). 
-A cell has 8 neighbours, which are the cells immediately next to it on the grid.
-
-To progress to the next Life step, the following rules are used:
-
-- If a cell has 3 neighbours, it will be alive in the next step, regardless of it's current state, (alive or dead).
-- If a cell is alive and has 2 neighbours, it will stay alive in the next step.
-- Otherwise, a cell will be dead in the next step.
-
-These rules are shown in the following plot.
-
-<p align="center">
-<img 
-    src="/assets/posts/life-transformer/life_state_diagram.png"
-    alt="Life game computed by a SingleAttentionNet model"
-/>
-</p>
-
 ## References:
 
 - Springer et al - 2020 - It’s Hard For Neural Networks to Learn the Game of
@@ -276,3 +254,25 @@ Life - [https://arxiv.org/abs/2009.01398](https://arxiv.org/abs/2009.01398)
   month={July}
 }
 ```
+
+## Appendix
+
+### The rules of Life
+
+Life takes place on a 2D grid with cells that are either dead or alive, (represented by 0 or 1). 
+A cell has 8 neighbours, which are the cells immediately next to it on the grid.
+
+To progress to the next Life step, the following rules are used:
+
+- If a cell has 3 neighbours, it will be alive in the next step, regardless of it's current state, (alive or dead).
+- If a cell is alive and has 2 neighbours, it will stay alive in the next step.
+- Otherwise, a cell will be dead in the next step.
+
+These rules are shown in the following plot.
+
+<p align="center">
+<img 
+    src="/assets/posts/life-transformer/life_state_diagram.png"
+    alt="Life game computed by a SingleAttentionNet model"
+/>
+</p>
