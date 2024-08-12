@@ -14,10 +14,6 @@ We create a simplified transformer neural network,
 and train it compute Conway's Game of Life
 from examples of the game.
 
-> Q: Wouldn't convolution be better here? The Game of Life is basically a single 3x3 kernel anyway
-
-Answer: CNNs would be smaller, more efficient to run, generalise to arbitrary grid sizes, and easier to train, (see the works on CNNs and Life in the references below)... However, this was an exercise in seeing whether a transformer with single-head attention could solve Life, and how it would solve it — the finding is that it approximates a CNN, with 1x1 convolutions and a 3-by-3 average pool approximated by the attention mechanism. (As noted in [It’s Hard For Neural Networks to Learn the Game of Life](https://arxiv.org/abs/2009.01398), Life can be hand written as a tiny CNN with a single layer.)
-
 This exercise presents pretty much the simplest form of a transformer.
 We call the model SingleAttentionNet,
 due to its single attention block, with single-head attention.
@@ -53,6 +49,10 @@ but it's interesting to show that the attention layer can learn to approximate i
 (We found that average pooling does also work, even with the middle cell included.)
 
 (For a recap of the rules of Life, check out the [appendix](#the-rules-of-life).)
+
+> Q: Wouldn't convolution be better here? The Game of Life is basically a single 3x3 kernel anyway
+
+Answer: CNNs would be smaller, more efficient to run, generalise to arbitrary grid sizes, and easier to train, (see the works on CNNs and Life in the references below)... However, this was an exercise in seeing whether a transformer with single-head attention could solve Life, and how it would solve it — the finding is that it approximates a CNN, with 1x1 convolutions and a 3-by-3 average pool approximated by the attention mechanism. (As noted in [It’s Hard For Neural Networks to Learn the Game of Life](https://arxiv.org/abs/2009.01398), Life can be hand written as a tiny CNN with a single layer.)
 
 ## Problem formulation and training loop
 
