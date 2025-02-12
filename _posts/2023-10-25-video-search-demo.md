@@ -5,7 +5,7 @@ date:   2023-10-25 00:00:00 +0000
 date_edited:
 categories:
 comments: true
-nolink: true
+nolink: false
 ---
 
 [*Link to the demo.*](https://huggingface.co/spaces/sradc/visual-content-search-over-videos)
