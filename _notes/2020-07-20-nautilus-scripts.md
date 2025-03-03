@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Nautilus scripts with Python."
+title:  "Nautilus scripts with Python"
 date:   2020-07-20 00:00:00 +0000
 date_edited: 2020-07-20 00:00:00 +0000
 comments: true
@@ -13,8 +13,6 @@ Nautilus (Ubuntu's default file manager, a.k.a. 'Files') lets you run custom scr
 - Put an executable in `~/.local/share/nautilus/scripts`
 - Restart Nautilus, e.g. `nautilus -q`
 - Select files/folders, right click them (to open the context menu), and run the executable from Scripts > your_script.
-
-This can be handy.
 
 Nautilus sets a few [variables](https://help.ubuntu.com/community/NautilusScriptsHowto) that your scripts can use. The most useful is 'NAUTILUS_SCRIPT_SELECTED_FILE_PATHS', which tells you the files/folders that have been selected.
 
