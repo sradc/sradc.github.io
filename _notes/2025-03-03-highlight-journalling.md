@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "The hierarchical highlight journal system"
+title:  "The hierarchical highlight journalling system"
 date:   2025-03-03 00:00:00 +0000
 date_edited: 2025-03-03 00:00:00 +0000
 comments: true
 ---
 
-The hierarchical highlight journal system is as follows:
+The hierarchical highlight journalling system is as follows:
 - Near the end of the day, write a single sentence containing your highlight of that day.
 - At the end of the week, look back at your daily highlights. Select your favourite to be your highlight of the week.
 - At the end of the month, look back at the weekly highlights. Select your favourite to be your highlight of the month.
