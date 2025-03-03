@@ -14,7 +14,7 @@ The hierarchical highlight journal system is as follows:
 
 Some benefits of the sytem:
 - Brevity
-- Not time consuming
+- Quick to write / work with
 - The best items bubble up, (your favourite favourites...)
 - Can choose level of detail to look back across, (years / months / weeks / days)
 - Helps with being conscious of positive moments
