@@ -4,6 +4,7 @@ title:  "Nautilus scripts with Python"
 date:   2020-07-20 00:00:00 +0000
 date_edited: 2020-07-20 00:00:00 +0000
 comments: true
+permalink: /notes/20200720nautilus-scripts/
 ---
 
 *Tested on Ubuntu 18.04.4*

@@ -40,7 +40,7 @@ collections:
     permalink: /posts/:title/
   notes:
     output: true
-    permalink: /notes/:year:month:day:title/
+    permalink: /notes/:title/
   misc:
     output: true
     permalink: /misc/:title/
