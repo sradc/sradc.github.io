@@ -4,6 +4,7 @@ title:  "The hierarchical highlight journalling system"
 date:   2025-03-03 00:00:00 +0000
 date_edited: 2025-03-03 00:00:00 +0000
 comments: true
+nolink: true
 ---
 
 The hierarchical highlight journalling system is as follows:
