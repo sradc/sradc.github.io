@@ -11,17 +11,22 @@ thumbnail: /assets/posts/life-transformer/attention_matrix_training.gif
 {%- include mathjax.html -%}
 
 We find that a highly simplified transformer neural network
-is able to compute [Conway's Game of Life](https://www.youtube.com/watch?v=R9Plq-D1gEk) perfectly, 
+is able to compute [Conway's Game of Life](https://www.youtube.com/watch?v=R9Plq-D1gEk), 
 just from being trained on examples of the game.
 
 The simple nature of this model allows us to look at its structure
 and observe that it really is computing the Game of Life
-— it is not a statistical model that predicts the most likely next state based 
-on all the examples it has been trained on.
+— it is not "just" a statistical model that predicts the most likely next state based 
+on previous examples it's seen. 
+
+It learns to carry out the steps of the Game of Life algorithm:
+counting the number of neighbours, looking at the previous state of the cell,
+and using this information to determine the next state of the cell.
 
 We observe that it learns to use its attention mechanism to compute `3x3` convolutions — `3x3` convolutions
 are a [common](https://stackoverflow.com/a/69056448) way to implement the Game of Life, 
-since it can be used to count the neighbours of a cell, which is used to decide whether the cell lives or dies.
+since it can be used to count the neighbours of a cell, 
+which is part of the decision as to whether a cell lives or dies.
 
 We refer to the model as SingleAttentionNet, 
 because it consists of a single attention block, 
@@ -121,15 +126,15 @@ but it wasn't enough to just train on the first iterations.
 
 ### Explanation of the model
 
-A central finding of this work is that the SingleAttentionNet model doesn't merely predict the next state of Conway's Game of Life based on statistical patterns; it genuinely computes the Game of Life rules. This assertion is supported by several key observations:
+A central finding of this work is that the SingleAttentionNet model doesn't merely predict the next state of Conway's Game of Life based on statistical patterns; it computes the Game of Life rules. This assertion is supported by several key observations:
 
 Firstly, the model consistently achieves perfect accuracy (100%) when tasked with predicting the next state of entirely new, randomly generated Life grids, even over multiple steps. This high level of generalization strongly suggests it has learned the underlying rules rather than memorizing training examples.
 
-Secondly, a detailed examination of the model's single attention block reveals its functional mechanism. As shown in the "attention matrix training" GIF above, the attention mechanism learns to perform a 3×3 averaging operation (excluding the center cell). This effectively implements a 3×3 convolution, a well-known method for calculating the number of living neighbors around each cell.
+Secondly, an examination of the model's single attention block reveals its functional mechanism. As shown in the "attention matrix training" GIF above, the attention mechanism learns to perform a 3×3 averaging operation (excluding the center cell). This means that each token outputted from the attention layer contains just information about the 9 neighbours, as well as the cell itself due to the skip connection.
 
-Following the attention layer, each token (representing a grid cell) is enriched with information about its neighbors and its own previous state. To confirm this, we conducted linear probe experiments, which demonstrated that the processed tokens indeed encode this crucial information, making the neighbor count and the cell's prior state readily decodable.
+To confirm this, we conducted linear probe experiments, which demonstrated that the processed tokens encode this information, making the neighbor count and the cell's prior state decodable.
 
-Finally, these information-rich tokens are passed through a classifier layer. This layer, acting on the neighbor count and previous state information contained within each token, applies the Game of Life rules to determine the cell's next state (alive or dead).
+Finally, these tokens are passed through a classifier layer. This layer, acting on the neighbor count and previous state information contained within each token, applies the Game of Life rules to determine the cell's next state (alive or dead).
 
 In essence, the SingleAttentionNet leverages its attention mechanism to gather local neighborhood information, encodes this information into its tokens, and then uses a simple classifier to apply the Game of Life rules to each cell independently, thereby simulating the game.
 
