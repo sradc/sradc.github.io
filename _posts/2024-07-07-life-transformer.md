@@ -19,8 +19,8 @@ and observe that it really is computing the Game of Life
 — it is not a statistical model that predicts the most likely next state based 
 on all the examples it has been trained on.
 
-We observe that it learns to use its attention mechanism to compute `3x3` convolutions,
-- `3x3` convolutions are a [common](https://stackoverflow.com/a/69056448) way to implement the Game of Life, 
+We observe that it learns to use its attention mechanism to compute `3x3` convolutions — `3x3` convolutions
+are a [common](https://stackoverflow.com/a/69056448) way to implement the Game of Life, 
 since it can be used to count the neighbours of a cell, which is used to decide whether the cell lives or dies.
 
 We refer to the model as SingleAttentionNet, 
