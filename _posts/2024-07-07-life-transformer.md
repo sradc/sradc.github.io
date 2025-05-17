@@ -50,7 +50,7 @@ This shows the model learning to compute a 3 by 3 average pool via its attention
 
 ## Details
 
-The full code is made available in the Jupyter notebook [here](https://github.com/sradc/training-a-simple-transformer-on-conways-game-of-life/blob/main/main.ipynb) on GitHub.
+The full code is made available, [here](https://github.com/sradc/training-a-simple-transformer-on-conways-game-of-life/blob/main/main.ipynb).
 
 The problem is framed as:
 
@@ -109,12 +109,13 @@ We tried replacing the attention layer of the model with a manually computed Nei
 and found the model learned its task far quicker, and generalised to arbitrary grid sizes.
 We found that the same was true for replacing the layer with a 3-by-3 average pool.
 
-We checked that the model worked by looking for `1024` batches with 100% accuracy, 
-and then testing the model on 100 Life games for 100 steps each.
+We detected that the model had converged by looking for 
+`1024` training batches with perfect predictions,
+and that it could perfectly run 100 Life games for 100 steps.
 
-We found that training it on just the first Life step after randomly initialising a grid 
-wasn't enough for it to pass the 100 Life games for 100 steps test,
-and so randomly introduced pairs with an extra Life step taken.
+We found that it was enough to train the model on the 
+first and second iterations of the random Life games,
+but it wasn't enough to just train on the first iterations.
 
 ### The rules of Life
 
