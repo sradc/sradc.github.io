@@ -54,7 +54,7 @@ This shows the model learning to compute a 3 by 3 average pool via its attention
 
 The full code is made available, [here](https://github.com/sradc/life-transformer).
 
-The problem is framed as:
+The problem is modeled as:
 
 ```python
 model(life_grid) = next_life_grid
