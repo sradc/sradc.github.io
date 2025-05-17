@@ -15,11 +15,9 @@ is able to compute [Conway's Game of Life](https://www.youtube.com/watch?v=R9Plq
 just from being trained on examples of the game.
 
 The simple nature of this model allows us to look at its structure
-and observe that it really is computing the Game of Life
-— it is not "just" a statistical model that predicts the most likely next state based 
-on previous examples it's seen. 
-
-It learns to carry out the steps of the Game of Life algorithm:
+and observe that it really is computing the Game of Life. 
+It is not "just" a statistical model that predicts the most likely next state based on previous examples it's seen —
+it learns to carry out the steps of the Game of Life algorithm:
 counting the number of neighbours, looking at the previous state of the cell,
 and using this information to determine the next state of the cell.
 
