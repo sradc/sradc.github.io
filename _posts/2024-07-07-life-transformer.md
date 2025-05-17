@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Training a Simple Transformer Neural Net on Conway's Game of Life"
+title: "Transformer neural net learns to run Conway's Game of Life just from examples"
 date: 2024-07-07 00:00:00 +0000
 date_edited: 2025-05-17 00:00:00 +0000
 categories:
@@ -19,7 +19,9 @@ and observe that it really is computing the Game of Life
 — it is not a statistical model that predicts the most likely next state based 
 on all the examples it has been trained on.
 
-We observe that it learns to use its attention mechanism to compute `3x3` convolutions.
+We observe that it learns to use its attention mechanism to compute `3x3` convolutions,
+- `3x3` convolutions are a [common](https://stackoverflow.com/a/69056448) way to implement the Game of Life, 
+since it can be used to count the neighbours of a cell, which is used to decide whether the cell lives or dies.
 
 We refer to the model as SingleAttentionNet, 
 because it consists of a single attention block, 
