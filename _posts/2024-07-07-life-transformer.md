@@ -52,7 +52,7 @@ This shows the model learning to compute a 3 by 3 average pool via its attention
 
 ## Details
 
-The full code is made available, [here](https://github.com/sradc/life-transformer/blob/main/main.ipynb).
+The full code is made available, [here](https://github.com/sradc/life-transformer).
 
 The problem is framed as:
 
