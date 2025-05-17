@@ -52,7 +52,7 @@ This shows the model learning to compute a 3 by 3 average pool via its attention
 
 ## Details
 
-The full code is made available, [here](https://github.com/sradc/training-a-simple-transformer-on-conways-game-of-life/blob/main/main.ipynb).
+The full code is made available, [here](https://github.com/sradc/life-transformer/blob/main/main.ipynb).
 
 The problem is framed as:
 
@@ -157,7 +157,7 @@ Life - [https://arxiv.org/abs/2009.01398](https://arxiv.org/abs/2009.01398)
 @misc{radcliffe_life_transformer_2024,
   title={Training a Simple Transformer Neural Net on Conway's Game of Life},
   url={https://sidsite.com/posts/life-transformer/},
-  howpublished={Main page: \url{https://sidsite.com/posts/life-transformer/}, GitHub repository: \url{https://github.com/sradc/training-a-simple-transformer-on-conways-game-of-life}},
+  howpublished={Main page: \url{https://sidsite.com/posts/life-transformer/}, GitHub repository: \url{https://github.com/sradc/life-transformer}},
   author={Radclffe, Sidney},
   year={2024},
   month={July}
