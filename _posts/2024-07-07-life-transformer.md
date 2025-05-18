@@ -124,8 +124,8 @@ but it wasn't enough to just train on the first iterations.
 
 We tried replacing the attention layer of the model with a manually computed Neighbour Attention matrix,
 and found the model learned the task far quicker, and generalised to arbitrary grid sizes.
-Not only this, but we checked that it computed every 3 by 3 subgrid combination correctly.
-Since the neighbour matrix means only 3 by 3 subgrids are looked at by the classifier layer, there's therefore no doubt that this instance of the model is "perfectly" computing Life.
+Not only this, but we checked that it computed every 3 by 3 subgrid correctly.
+Since the neighbour matrix means that only 3 by 3 subgrids are looked at by the classifier layer, there's therefore no doubt that this instance of the model is "perfectly" computing Life.
 
 We found that the same was true for replacing the layer with a 3-by-3 average pool.
 
