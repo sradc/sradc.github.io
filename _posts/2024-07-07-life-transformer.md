@@ -124,8 +124,9 @@ but it wasn't enough to just train on the first iterations.
 
 The model was fairly difficult to train - sensitive to hyperparameters and seed. 
 Some seeds with the current hyperparameters don't converge, (within a reasonable time frame to test them over).
-It also seems sensitive to the GPU architecture —
-the current version of the code reliably works on my 3060 Ti GPU, but fails to converge on a Google Colab T4 GPU instance.
+It also seems sensitive the software (or possibly hardware) environment,
+e.g. the current code runs reliably locally with the given seed, on a 3060 Ti GPU,
+but fails to run on a Google Colab T4 GPU instance.
 
 We tried replacing the attention layer of the model with a manually computed Neighbour Attention matrix,
 and found the model learned the task far quicker, and generalised to arbitrary grid sizes.
