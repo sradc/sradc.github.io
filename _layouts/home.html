@@ -16,7 +16,6 @@ layout: default
         {% unless post.nolink %}
         <li>
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">Published: {{ post.date | date: date_format }} {%- if post.date_edited -%} &nbsp; Edited: {{ post.date_edited | date: date_format }} {%- endif -%}</span>
           <h3>
             <a class="post-link" href="{{ post.url | relative_url }}">
               {{ post.title | escape }}
