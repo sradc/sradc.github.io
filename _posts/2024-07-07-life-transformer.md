@@ -2,7 +2,7 @@
 layout: post
 title: "Transformer neural net learns to run Conway's Game of Life just from examples"
 date: 2024-07-07 00:00:00 +0000
-date_edited: 2025-05-17 00:00:00 +0000
+date_edited: 2025-05-18 00:00:00 +0000
 categories:
 comments: true
 thumbnail: /assets/posts/life-transformer/attention_matrix_training.gif
@@ -110,17 +110,24 @@ The largest grid size we successfully trained was 16x16.
 
 ### Notes
 
-We tried replacing the attention layer of the model with a manually computed Neighbour Attention matrix,
-and found the model learned its task far quicker, and generalised to arbitrary grid sizes.
-We found that the same was true for replacing the layer with a 3-by-3 average pool.
+The stopping condition for training was the model computing `10,000` training batches 
+with perfect predictions. 
+Since each batch contains 32 life grids the model has never seen before, 
+that means it has predicted `32,000` life grid steps without making mistakes.
 
-The stopping condition for training was the model computing `1024` training batches 
-with perfect predictions, and then running 100 Life games for 100 steps perfectly.
+It was then further checked by running a further 10,000 randomly initialised life grids for 100 steps each. 
+That's `10,000 * 100 = 1,000,000` life grid steps computed correctly.
 
 We found that it was enough to train the model on the 
 first and second iterations of the random Life games,
 but it wasn't enough to just train on the first iterations.
 
+We tried replacing the attention layer of the model with a manually computed Neighbour Attention matrix,
+and found the model learned the task far quicker, and generalised to arbitrary grid sizes.
+Not only this, but we checked that it computed every 3 by 3 subgrid combination correctly.
+Since the neighbour matrix means only 3 by 3 subgrids are looked at by the classifier layer, there's therefore no doubt that this instance of the model is "perfectly" computing Life.
+
+We found that the same was true for replacing the layer with a 3-by-3 average pool.
 
 ### Explanation of the model
 
