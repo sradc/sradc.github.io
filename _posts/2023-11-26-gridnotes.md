@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Demo: Gridnotes - an infinite 2D text editor"
+title:  "Gridnotes - an infinite 2D text editor"
 date: 2023-11-26 00:00:00 +0000
-date_edited: 2023-11-26 00:00:00 +0000
+date_edited: 2025-05-31 00:00:00 +0000
 categories:
 comments: true
-nolink: true
+nolink: false
 ---
 
-Gridnotes (working title) is an infinite 2D text editor.
+Gridnotes is an infinite 2D text editor I made.
 
 If you are using Firefox or Chrome, on Desktop, try out the demo: [here](https://gridnotes.io/v1/)
 
@@ -52,7 +52,3 @@ Text is stored locally, in the browser.
 
 - [Orca](https://wiki.xxiivv.com/site/orca.html) <- a two-dimensional programming language for making music
 - Infinite 2D canvas tools such as Excalidraw, Obsidian canvas, Miro, Lucidchart, Freeform etc.
-
---- 
-
-Edit: seen that the name is already in use
