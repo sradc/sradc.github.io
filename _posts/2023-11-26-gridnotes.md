@@ -10,7 +10,7 @@ nolink: false
 
 Gridnotes is an infinite 2D text editor I made.
 
-If you are using Firefox or Chrome, on Desktop, try out the demo: [here](https://gridnotes.io/v1/)
+If you are using Firefox or Chrome, on Desktop, try it out: [here](https://gridnotes.io/v1/)
 
 ## Features
 
