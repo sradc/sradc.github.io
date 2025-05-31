@@ -44,8 +44,6 @@ Opening links.
 
 Plus a few more bonus features, e.g. newline behaviour, alt + backspace deletion, etc.
 
-## Notes
-
 Text is stored locally, in the browser.
 
 ## Inspirations
