@@ -2,7 +2,7 @@
 layout: post
 title:  "Analyzing Data 170,000x Faster with Python"
 date: 2023-10-29 00:00:00 +0000
-date_edited: 2025-10-11 00:00:00 +0000
+date_edited: 2025-12-05 00:00:00 +0000
 categories:
 comments: true
 ---
@@ -114,22 +114,12 @@ This lends itself to the following workflow for optimizing the code:
 - Run the profiler
 - Identify the slowest lines
 - Try make to the slower lines faster
+- Test the output for correctness, (important)
 - Repeat
 
-If there are just a few lines taking up the majority of the time, we know what to focus on, and from the above we see that there's a particularly slow line, taking up ~70% of the time.
+If there are just a few lines taking up the majority of the time, we know what to focus on — e.g. in the above code block we see that there is a particularly slow line, taking up ~70% of the time.
 
-However, there is another vital step to include:
-
-- Run the profiler
-- Identify the slowest lines
-- Try make to the slower lines faster
-- _Test the output for correctness_
-- Repeat
-
-Good tests enable us to focus on speeding up the code,
-while knowing that if we accidentally change what's computed, it will be flagged.
-While working on this, I set up a helper function to run both profiling
-and tests on every iteration I made, testing the output against the original function.
+While working on this, I created a helper function that ran both profiling and tests; this enabled me to try things out and get measurements while ensuring that the code was still valid.
 
 ### Optimization 1 - dictionary of sets of users who answered questions, _users_who_answered_q_
 
