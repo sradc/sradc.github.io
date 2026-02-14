@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Transformer neural net learns to run Conway's Game of Life just from examples"
-date: 2024-07-07 00:00:00 +0000
-date_edited: 2025-05-18 00:00:00 +0000
+date: 2024-07-07
+date_edited: 2025-05-18
 categories:
 comments: true
 thumbnail: /assets/posts/life-transformer/attention_matrix_training.gif

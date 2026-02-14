@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "The hierarchical highlight journalling system"
-date:   2025-03-03 00:00:00 +0000
-date_edited: 2025-03-03 00:00:00 +0000
+date:   2025-03-03
+date_edited: 2025-03-03
 comments: true
 nolink: true
 ---

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Extracting copyrighted text from GPT"
-date: 2024-01-08 00:00:00 +0000
-date_edited: 2024-01-08 00:00:00 +0000
+date: 2024-01-08
+date_edited: 2024-01-08
 categories:
 comments: true
 nolink: true

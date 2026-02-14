@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Piano tuning"
-date:   2019-03-03 00:00:00 +0000
-date_edited: 2021-10-26 00:00:00 +0000
+date:   2019-03-03
+date_edited: 2021-10-26
 categories: harmony music tuning music-theory
 comments: true
 ---

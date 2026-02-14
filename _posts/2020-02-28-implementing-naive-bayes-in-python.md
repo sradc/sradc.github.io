@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Implementing Naive Bayes in Python"
-date:   2020-02-28 19:00:35 +0000
-date_edited: 2020-03-02 00:00:00 +0000
+date:   2020-02-28
+date_edited: 2020-03-02
 categories: machine-learning python
 comments: true
 ---

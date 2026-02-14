@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Nautilus scripts with Python"
-date:   2020-07-20 00:00:00 +0000
-date_edited: 2020-07-20 00:00:00 +0000
+date:   2020-07-20
+date_edited: 2020-07-20
 comments: true
 permalink: /notes/20200720nautilus-scripts/
 ---

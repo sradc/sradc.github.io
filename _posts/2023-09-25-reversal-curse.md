@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Prompting Improvements: 4x Accuracy in 'The Reversal Curse' Experiment 2"
-date: 2023-09-25 00:00:00 +0000
-date_edited: 2023-09-26 00:00:00 +0000
+date: 2023-09-25
+date_edited: 2023-09-26
 categories:
 comments: true
 nolink: true

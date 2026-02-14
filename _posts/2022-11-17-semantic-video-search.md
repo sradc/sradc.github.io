@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "How to implement visual content search in video using OpenAI's CLIP model, in Python"
-date:   2022-11-17 00:00:00 +0000
-date_edited: 2023-03-25 00:00:00 +0000
+date:   2022-11-17
+date_edited: 2023-03-25
 categories:
 comments: true
 nolink: false

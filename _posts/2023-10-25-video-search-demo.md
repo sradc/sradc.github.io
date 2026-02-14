@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Visual content search over music videos - demo"
-date:   2023-10-25 00:00:00 +0000
+date:   2023-10-25
 date_edited:
 categories:
 comments: true

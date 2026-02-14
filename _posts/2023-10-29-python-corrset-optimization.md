@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Analyzing Data 170,000x Faster with Python"
-date: 2023-10-29 00:00:00 +0000
-date_edited: 2025-12-05 00:00:00 +0000
+date: 2023-10-29
+date_edited: 2025-12-05
 categories:
 comments: true
 ---

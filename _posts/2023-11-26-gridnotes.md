@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Gridnotes - an infinite 2D text editor"
-date: 2023-11-26 00:00:00 +0000
-date_edited: 2025-05-31 00:00:00 +0000
+date: 2023-11-26
+date_edited: 2025-05-31
 categories:
 comments: true
 nolink: false

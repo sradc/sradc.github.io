@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Visualising a fully connected neural network classifying MNIST digits"
-date:   2021-05-23 00:00:00 +0000
-date_edited: 2021-05-25 00:00:00 +0000
+date:   2021-05-23
+date_edited: 2021-05-25
 categories:
 comments: true
 nolink: false
